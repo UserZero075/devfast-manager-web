@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DevFast Manager Docs</title><meta name="description" content="DevFast Manager documentation"><link rel="stylesheet" href="../style.css"></head><body><div class="grain"></div><div class="lang"><button onclick="location.href='./'" class="active">ES</button><button onclick="location.href='./en.html'" class="">EN</button></div><nav><a class="brand" href="../">DevFast Manager</a><div><a href="../">Inicio</a><a href="./en.html">EN</a><a href="https://github.com/UserZero075/Business-Management-Dashboard">GitHub</a></div></nav><main class="docs-main"><header class="docs-hero"><div><p class="eyebrow">Docs · ES</p><h1>Documentación completa</h1><p>Todo el contenido viene de la carpeta Documentation del repositorio: instalación, uso, configuración, desarrollo, API y arquitectura.</p></div><div class="doc-stats"><span><b>6</b><small>guías</small></span><span><b>54KB</b><small>Markdown</small></span><span><b>REST</b><small>API</small></span><span><b>Prisma</b><small>DB</small></span></div></header><section class="doc-layout"><aside class="sidebar"><b>Documentación completa</b><a href="#01-inicio-rapido">Inicio rápido</a><a href="#02-guia-usuario">Guía de usuario</a><a href="#03-configuracion">Configuración</a><a href="#04-desarrollo">Desarrollo</a><a href="#05-api">API</a><a href="#06-arquitectura">Arquitectura</a></aside><div><div class="doc-index"><a href="#01-inicio-rapido"><b>Inicio rápido</b><small>Instala y levanta backend/frontend en minutos</small></a><a href="#02-guia-usuario"><b>Guía de usuario</b><small>Cómo operar cada módulo del sistema</small></a><a href="#03-configuracion"><b>Configuración</b><small>Variables de entorno, base de datos, SMTP y producción</small></a><a href="#04-desarrollo"><b>Desarrollo</b><small>Estructura, modelos, API y flujo técnico</small></a><a href="#05-api"><b>API</b><small>Endpoints REST principales y ejemplos</small></a><a href="#06-arquitectura"><b>Arquitectura</b><small>Frontend, backend, datos, seguridad y escalabilidad</small></a></div><div class="doc-content"><section id="01-inicio-rapido" class="doc-section"><h1 id="devfast-manager-inicio-r-pido">DevFast Manager - Inicio Rápido</h1>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DevFast Manager Docs</title><meta name="description" content="DevFast Manager documentation"><link rel="stylesheet" href="../style.css"></head><body class="docs-body"><div class="lang"><button onclick="location.href='./'" class="active">ES</button><button onclick="location.href='./en.html'" class="">EN</button></div><nav><a class="brand" href="../">DevFast Manager</a><div><a href="../">Inicio</a><a href="./en.html">EN</a><a href="https://github.com/UserZero075/Business-Management-Dashboard">GitHub</a></div></nav><main class="docs-main"><header class="docs-hero"><div class="docs-kicker">Docs · ES</div><h1>Documentación de DevFast Manager</h1><p>Guías reales del repositorio, convertidas a HTML: instalación, operación, configuración, desarrollo, API y arquitectura.</p><div class="docs-actions"><a class="active" href="#01-inicio-rapido">Start</a><a href="https://github.com/UserZero075/Business-Management-Dashboard/tree/main/Documentation/es">Markdown source</a></div></header><section class="docs-cards"><a href="#01-inicio-rapido"><b>Inicio rápido</b><small>Requisitos, instalación local, primer uso y problemas comunes.</small></a><a href="#02-guia-usuario"><b>Guía de usuario</b><small>Recorrido por Dashboard, Proyectos, Infraestructura, Finanzas, Equipo y Chat.</small></a><a href="#03-configuracion"><b>Configuración</b><small>Variables de entorno, base de datos, SMTP, producción y seguridad.</small></a><a href="#04-desarrollo"><b>Desarrollo</b><small>Estructura del proyecto, rutas, páginas, Prisma, estilos y debugging.</small></a><a href="#05-api"><b>API</b><small>Endpoints REST, autenticación, payloads, WebSocket y códigos de error.</small></a><a href="#06-arquitectura"><b>Arquitectura</b><small>Capas, flujo de datos, modelos, servicios, seguridad y escalabilidad.</small></a></section><section class="docs-grid"><aside class="docs-sidebar"><a href="#01-inicio-rapido"><span>1</span>Inicio rápido</a><a href="#02-guia-usuario"><span>2</span>Guía de usuario</a><a href="#03-configuracion"><span>3</span>Configuración</a><a href="#04-desarrollo"><span>4</span>Desarrollo</a><a href="#05-api"><span>5</span>API</a><a href="#06-arquitectura"><span>6</span>Arquitectura</a></aside><div><select class="mobile-doc-select"><option value="">Ir a sección</option><option value="#01-inicio-rapido">Inicio rápido</option><option value="#02-guia-usuario">Guía de usuario</option><option value="#03-configuracion">Configuración</option><option value="#04-desarrollo">Desarrollo</option><option value="#05-api">API</option><option value="#06-arquitectura">Arquitectura</option></select><div class="doc-content"><section class="doc-section" id="01-inicio-rapido"><h1 id="devfast-manager-inicio-r-pido">DevFast Manager - Inicio Rápido</h1>
 <h2 id="requisitos-previos">Requisitos Previos</h2>
 <ul>
 <li><strong>Node.js</strong> 20.x o superior</li>
@@ -6,10 +6,10 @@
 </ul>
 <h2 id="instalaci-n-en-5-minutos">Instalación en 5 Minutos</h2>
 <h3 id="1-clonar-el-proyecto">1. Clonar el proyecto</h3>
-<pre><code>git clone https://github.com/UserZero075/Business-Management-Dashboard.git
+<pre><button class="copy" type="button">copy</button><code>git clone https://github.com/UserZero075/Business-Management-Dashboard.git
 cd Business-Management-Dashboard</code></pre>
 <h3 id="2-instalar-dependencias">2. Instalar dependencias</h3>
-<pre><code># Backend
+<pre><button class="copy" type="button">copy</button><code># Backend
 cd backend
 npm install
 
@@ -17,14 +17,14 @@ npm install
 cd ../frontend
 npm install</code></pre>
 <h3 id="3-configurar-base-de-datos">3. Configurar base de datos</h3>
-<pre><code>cd backend
+<pre><button class="copy" type="button">copy</button><code>cd backend
 npx prisma db push</code></pre>
 <h3 id="4-iniciar-servidores">4. Iniciar servidores</h3>
 <p><strong>Terminal 1 - Backend (puerto 3001):</strong></p>
-<pre><code>cd backend
+<pre><button class="copy" type="button">copy</button><code>cd backend
 npm run dev</code></pre>
 <p><strong>Terminal 2 - Frontend (puerto 5173):</strong></p>
-<pre><code>cd frontend
+<pre><button class="copy" type="button">copy</button><code>cd frontend
 npm run dev</code></pre>
 <h3 id="5-acceder">5. Acceder</h3>
 <p>Abre tu navegador en: <strong>http://localhost:5173</strong></p>
@@ -40,26 +40,26 @@ npm run dev</code></pre>
 <p>El primer usuario registrado se convierte en <strong>administrador</strong>.</p>
 <h2 id="actualizar-a-producci-n">Actualizar a producción</h2>
 <h3 id="backend">Backend</h3>
-<pre><code>cd backend
+<pre><button class="copy" type="button">copy</button><code>cd backend
 npm run build
 npm run start</code></pre>
 <h3 id="frontend">Frontend</h3>
-<pre><code>cd frontend
+<pre><button class="copy" type="button">copy</button><code>cd frontend
 npm run build
 npm run preview</code></pre>
 <h2 id="soluci-n-de-problemas">Solución de Problemas</h2>
 <h3 id="cannot-find-module">&quot;Cannot find module&quot;</h3>
 <p>Vuelve a instalar las dependencias:</p>
-<pre><code>npm install</code></pre>
+<pre><button class="copy" type="button">copy</button><code>npm install</code></pre>
 <h3 id="error-de-base-de-datos">Error de base de datos</h3>
 <p>Sincroniza el schema de Prisma:</p>
-<pre><code>npx prisma db push</code></pre>
+<pre><button class="copy" type="button">copy</button><code>npx prisma db push</code></pre>
 <h3 id="puerto-ocupado">Puerto ocupado</h3>
 <p>Mata los procesos en los puertos:</p>
-<pre><code>kill $(lsof -t -i :3001)  # Backend
+<pre><button class="copy" type="button">copy</button><code>kill $(lsof -t -i :3001)  # Backend
 kill $(lsof -t -i :5173)  # Frontend</code></pre>
 <h2 id="siguiente-paso">Siguiente Paso</h2>
-<p>Ver la <a href="./02-guia-usuario.md">Guía de Usuario</a> para aprender a usar todas las funciones del sistema.</p></section><section id="02-guia-usuario" class="doc-section"><h1 id="gu-a-de-usuario-devfast-manager">Guía de Usuario - DevFast Manager</h1>
+<p>Ver la <a href="./02-guia-usuario.md">Guía de Usuario</a> para aprender a usar todas las funciones del sistema.</p></section><section class="doc-section" id="02-guia-usuario"><h1 id="gu-a-de-usuario-devfast-manager">Guía de Usuario - DevFast Manager</h1>
 <h2 id="introducci-n">Introducción</h2>
 <p>DevFast Manager es un sistema integral de gestión que te permite administrar proyectos, infraestructura, finanzas, equipo y tareas desde una sola plataforma.</p>
 <h2 id="navegaci-n">Navegación</h2>
@@ -179,11 +179,11 @@ kill $(lsof -t -i :5173)  # Frontend</code></pre>
 <li><strong>Vincula recursos</strong>: Asocia VPS e infraestructura a proyectos para ver costos reales</li>
 <li><strong>Actualiza métricas</strong>: Registra usuarios de cada proyecto regularmente</li>
 <li><strong>Revisa notificaciones</strong>: Mantente al día con la actividad del equipo</li>
-</ol></section><section id="03-configuracion" class="doc-section"><h1 id="configuraci-n-devfast-manager">Configuración - DevFast Manager</h1>
+</ol></section><section class="doc-section" id="03-configuracion"><h1 id="configuraci-n-devfast-manager">Configuración - DevFast Manager</h1>
 <h2 id="variables-de-entorno">Variables de Entorno</h2>
 <p>El archivo <code>.env</code> en la carpeta <code>backend/</code> contiene la configuración del sistema.</p>
 <h3 id="base-de-datos">Base de Datos</h3>
-<pre><code># SQLite (por defecto)
+<pre><button class="copy" type="button">copy</button><code># SQLite (por defecto)
 DATABASE_URL=&quot;file:./devfast.db&quot;
 
 # MySQL
@@ -192,7 +192,7 @@ DATABASE_URL=&quot;mysql://user:password@localhost:3306/devfast&quot;
 # PostgreSQL
 DATABASE_URL=&quot;postgresql://user:password@localhost:5432/devfast&quot;</code></pre>
 <h3 id="servidor">Servidor</h3>
-<pre><code># Puerto donde escuchará el backend
+<pre><button class="copy" type="button">copy</button><code># Puerto donde escuchará el backend
 PORT=3001
 
 # Host (0.0.0.0 para todas las interfaces)
@@ -201,10 +201,10 @@ HOST=0.0.0.0
 # Clave secreta para JWT (cambia en producción!)
 JWT_SECRET=&quot;tu-clave-secreta-muy-larga-y-segura&quot;</code></pre>
 <h3 id="tasas-de-cambio">Tasas de Cambio</h3>
-<pre><code># URL de El Toque para obtener tasas (opcional)
+<pre><button class="copy" type="button">copy</button><code># URL de El Toque para obtener tasas (opcional)
 EL_TOQUE_URL=&quot;https://eltoque.com/tasas-de-cambio-de-moneda-en-cuba-hoy&quot;</code></pre>
 <h3 id="correo-smtp-para-otp">Correo SMTP (para OTP)</h3>
-<pre><code># Servidor SMTP
+<pre><button class="copy" type="button">copy</button><code># Servidor SMTP
 SMTP_HOST=&quot;smtp.gmail.com&quot;
 SMTP_PORT=587
 SMTP_USER=&quot;tu-email@gmail.com&quot;
@@ -214,20 +214,20 @@ SMTP_FROM=&quot;tu-email@gmail.com&quot;
 # true para puerto 465, false para 587/25
 SMTP_SECURE=false</code></pre>
 <h3 id="entorno">Entorno</h3>
-<pre><code># development o production
+<pre><button class="copy" type="button">copy</button><code># development o production
 NODE_ENV=development</code></pre>
 <h2 id="configurar-url-del-frontend">Configurar URL del Frontend</h2>
 <p>El frontend necesita saber dónde está el backend:</p>
-<pre><code># Desarrollo
+<pre><button class="copy" type="button">copy</button><code># Desarrollo
 VITE_API_URL=http://localhost:3001 npm run dev
 
 # Producción con IP específica
 VITE_API_URL=http://100.x.x.x:3001 npm run build</code></pre>
 <p>O edita directamente en <code>frontend/src/api/client.ts</code>:</p>
-<pre><code>const API_URL = import.meta.env.VITE_API_URL || &#x27;http://localhost:3001&#x27;;</code></pre>
+<pre><button class="copy" type="button">copy</button><code>const API_URL = import.meta.env.VITE_API_URL || &#x27;http://localhost:3001&#x27;;</code></pre>
 <h2 id="despliegue-en-vps">Despliegue en VPS</h2>
 <h3 id="script-autom-tico">Script Automático</h3>
-<pre><code>chmod +x deploy.sh
+<pre><button class="copy" type="button">copy</button><code>chmod +x deploy.sh
 ./deploy.sh</code></pre>
 <p>El script:</p>
 <ol>
@@ -239,7 +239,7 @@ VITE_API_URL=http://100.x.x.x:3001 npm run build</code></pre>
 <li>Pregunta si iniciar en background</li>
 </ol>
 <h3 id="manual">Manual</h3>
-<pre><code># Backend
+<pre><button class="copy" type="button">copy</button><code># Backend
 cd backend
 npm install
 npx prisma db push
@@ -266,24 +266,19 @@ npm run preview -- --host --port 80</code></pre>
 <li><strong>Firewall</strong>: Si usas VPS, configura reglas de firewall para limitar acceso</li>
 </ol>
 <h2 id="puertos-comunes">Puertos Comunes</h2>
-<p>| Servicio | Puerto | Descripción |</p>
-<p>|----------|--------|-------------|</p>
-<p>| Backend API | 3001 | API REST |</p>
-<p>| Frontend Dev | 5173 | Servidor desarrollo |</p>
-<p>| Frontend Prod | 4173 | Servidor preview |</p>
-<p>| Nginx (custom) | 80 | Producción con nginx |</p>
+<div class="table-wrap"><table><thead><tr><th>Servicio</th><th>Puerto</th><th>Descripción</th></tr></thead><tbody><tr><td>Backend API</td><td>3001</td><td>API REST</td></tr><tr><td>Frontend Dev</td><td>5173</td><td>Servidor desarrollo</td></tr><tr><td>Frontend Prod</td><td>4173</td><td>Servidor preview</td></tr><tr><td>Nginx (custom)</td><td>80</td><td>Producción con nginx</td></tr></tbody></table></div>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <h3 id="error-de-conexi-n-a-base-de-datos">Error de conexión a base de datos</h3>
-<pre><code>npx prisma db push</code></pre>
+<pre><button class="copy" type="button">copy</button><code>npx prisma db push</code></pre>
 <h3 id="puerto-ocupado">Puerto ocupado</h3>
-<pre><code>lsof -i :3001
+<pre><button class="copy" type="button">copy</button><code>lsof -i :3001
 kill -9 PID</code></pre>
 <h3 id="cors-error">CORS error</h3>
 <p>Asegúrate de que el backend está escuchando en <code>0.0.0.0</code> y que el frontend tiene la URL correcta en <code>VITE_API_URL</code>.</p>
 <h3 id="otp-no-llega-al-correo">OTP no llega al correo</h3>
-<p>Verifica la configuración SMTP. El código también se muestra en la consola del servidor si <code>NODE_ENV=development</code>.</p></section><section id="04-desarrollo" class="doc-section"><h1 id="gu-a-de-desarrollo-devfast-manager">Guía de Desarrollo - DevFast Manager</h1>
+<p>Verifica la configuración SMTP. El código también se muestra en la consola del servidor si <code>NODE_ENV=development</code>.</p></section><section class="doc-section" id="04-desarrollo"><h1 id="gu-a-de-desarrollo-devfast-manager">Guía de Desarrollo - DevFast Manager</h1>
 <h2 id="estructura-del-proyecto">Estructura del Proyecto</h2>
-<pre><code>DevFast Manager/
+<pre><button class="copy" type="button">copy</button><code>DevFast Manager/
 ├── backend/
 │   ├── src/
 │   │   ├── routes/        # Endpoints de API
@@ -328,7 +323,7 @@ kill -9 PID</code></pre>
     └── en/  # Documentación en inglés</code></pre>
 <h2 id="comandos-de-desarrollo">Comandos de Desarrollo</h2>
 <h3 id="backend">Backend</h3>
-<pre><code>cd backend
+<pre><button class="copy" type="button">copy</button><code>cd backend
 
 # Desarrollo con hot-reload
 npm run dev
@@ -345,7 +340,7 @@ npx prisma generate
 # Sincronizar base de datos
 npx prisma db push</code></pre>
 <h3 id="frontend">Frontend</h3>
-<pre><code>cd frontend
+<pre><button class="copy" type="button">copy</button><code>cd frontend
 
 # Desarrollo
 npm run dev
@@ -360,7 +355,7 @@ npm run preview</code></pre>
 <li>Crea el archivo en <code>backend/src/routes/</code></li>
 <li>Registra en <code>backend/src/index.ts</code>:</li>
 </ol>
-<pre><code>import nuevaRuta from &#x27;./routes/nuevaRuta.js&#x27;
+<pre><button class="copy" type="button">copy</button><code>import nuevaRuta from &#x27;./routes/nuevaRuta.js&#x27;
 
 await fastify.register(nuevaRuta, { prefix: &#x27;/api/nueva&#x27; })</code></pre>
 <h2 id="agregar-nueva-p-gina-frontend">Agregar Nueva Página Frontend</h2>
@@ -368,22 +363,22 @@ await fastify.register(nuevaRuta, { prefix: &#x27;/api/nueva&#x27; })</code></pr
 <li>Crea el componente en <code>frontend/src/pages/</code></li>
 <li>Registra la ruta en <code>frontend/src/App.tsx</code>:</li>
 </ol>
-<pre><code>import NuevaPagina from &#x27;./pages/NuevaPagina&#x27;
+<pre><button class="copy" type="button">copy</button><code>import NuevaPagina from &#x27;./pages/NuevaPagina&#x27;
 
 &lt;Route path=&quot;/nueva&quot; element={&lt;NuevaPagina /&gt;} /&gt;</code></pre>
 <h2 id="base-de-datos">Base de Datos</h2>
 <h3 id="schema-prisma">Schema Prisma</h3>
 <p>Edita <code>backend/prisma/schema.prisma</code> para modificar modelos:</p>
-<pre><code>model NuevoModelo {
+<pre><button class="copy" type="button">copy</button><code>model NuevoModelo {
   id        Int      @id @default(autoincrement())
   campo     String
   relacion  Relacion @relation(...)
 }</code></pre>
 <p>Luego:</p>
-<pre><code>npx prisma db push
+<pre><button class="copy" type="button">copy</button><code>npx prisma db push
 npx prisma generate</code></pre>
 <h3 id="consultas-prisma">Consultas Prisma</h3>
-<pre><code>// Encontrar uno
+<pre><button class="copy" type="button">copy</button><code>// Encontrar uno
 const user = await prisma.user.findUnique({ where: { id: 1 } })
 
 // Crear
@@ -402,7 +397,7 @@ await prisma.user.delete({ where: { id: 1 } })</code></pre>
 <h2 id="estilos">Estilos</h2>
 <p>El frontend usa Tailwind CSS. Las clases de modo oscuro se configuran en <code>frontend/src/index.css</code>.</p>
 <h3 id="colores-del-sistema">Colores del Sistema</h3>
-<pre><code>/* Modo claro */
+<pre><button class="copy" type="button">copy</button><code>/* Modo claro */
 .bg-gray-50
 .bg-white
 .text-gray-800
@@ -411,7 +406,7 @@ await prisma.user.delete({ where: { id: 1 } })</code></pre>
 .dark .bg-gray-50 { background-color: #0f172a; }
 .dark .text-gray-800 { color: #e5e7eb; }</code></pre>
 <h2 id="testing">Testing</h2>
-<pre><code># Backend - verificar compilación
+<pre><button class="copy" type="button">copy</button><code># Backend - verificar compilación
 npm run build
 
 # Frontend - verificar build
@@ -422,13 +417,13 @@ npm run build
 npm run lint</code></pre>
 <h2 id="agregar-dependencia">Agregar Dependencia</h2>
 <h3 id="backend">Backend</h3>
-<pre><code>cd backend
+<pre><button class="copy" type="button">copy</button><code>cd backend
 npm install nombre-paquete</code></pre>
 <h3 id="frontend">Frontend</h3>
-<pre><code>cd frontend
+<pre><button class="copy" type="button">copy</button><code>cd frontend
 npm install nombre-paquete</code></pre>
 <h2 id="variables-de-entorno-para-desarrollo">Variables de Entorno para Desarrollo</h2>
-<pre><code># Backend
+<pre><button class="copy" type="button">copy</button><code># Backend
 DATABASE_URL=&quot;file:./devfast.db&quot;
 JWT_SECRET=&quot;dev-secret&quot;
 PORT=3001
@@ -441,7 +436,7 @@ VITE_API_URL=http://localhost:3001</code></pre>
 <h3 id="inspecturar-red">Inspecturar red</h3>
 <p>Usa las herramientas de desarrollo del navegador (F12 &gt; Network) para ver las peticiones API.</p>
 <h3 id="base-de-datos">Base de datos</h3>
-<pre><code># Abrir shell de Prisma
+<pre><button class="copy" type="button">copy</button><code># Abrir shell de Prisma
 npx prisma studio</code></pre>
 <h2 id="convenciones-de-c-digo">Convenciones de Código</h2>
 <ul>
@@ -450,32 +445,32 @@ npx prisma studio</code></pre>
 <li>Componentes React en PascalCase (ProjectManager.tsx)</li>
 <li>Hooks con prefijo &quot;use&quot; (useAuth.tsx)</li>
 <li>Rutas API en kebab-case (/api/my-resource)</li>
-</ul></section><section id="05-api" class="doc-section"><h1 id="documentaci-n-de-api-devfast-manager">Documentación de API - DevFast Manager</h1>
+</ul></section><section class="doc-section" id="05-api"><h1 id="documentaci-n-de-api-devfast-manager">Documentación de API - DevFast Manager</h1>
 <h2 id="autenticaci-n">Autenticación</h2>
-<h3 id="post-api-auth-request-otp">POST /api/auth/request-otp</h3>
+<h3 id="post-api-auth-request-otp" class="endpoint"><span class="method post">POST</span><code>/api/auth/request-otp</code></h3>
 <p>Solicita un código OTP para registro.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;email&quot;: &quot;usuario@ejemplo.com&quot;
 }</code></pre>
 <p><strong>Respuesta:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;success&quot;: true,
   &quot;expiresAt&quot;: &quot;2024-01-01T12:00:00.000Z&quot;,
   &quot;devCode&quot;: &quot;123456&quot;  // Solo en desarrollo
 }</code></pre>
 <hr>
-<h3 id="post-api-auth-register">POST /api/auth/register</h3>
+<h3 id="post-api-auth-register" class="endpoint"><span class="method post">POST</span><code>/api/auth/register</code></h3>
 <p>Registra un nuevo usuario.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;email&quot;: &quot;usuario@ejemplo.com&quot;,
   &quot;password&quot;: &quot;contraseña123&quot;,
   &quot;name&quot;: &quot;Nombre Usuario&quot;,
   &quot;otp&quot;: &quot;123456&quot;
 }</code></pre>
 <p><strong>Respuesta:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;user&quot;: {
     &quot;id&quot;: 1,
     &quot;email&quot;: &quot;...&quot;,
@@ -492,24 +487,24 @@ npx prisma studio</code></pre>
   &quot;token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...&quot;
 }</code></pre>
 <hr>
-<h3 id="post-api-auth-login">POST /api/auth/login</h3>
+<h3 id="post-api-auth-login" class="endpoint"><span class="method post">POST</span><code>/api/auth/login</code></h3>
 <p>Inicia sesión.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;email&quot;: &quot;usuario@ejemplo.com&quot;,
   &quot;password&quot;: &quot;contraseña123&quot;
 }</code></pre>
 <p><strong>Respuesta:</strong> Mismo formato que register.</p>
 <hr>
-<h3 id="get-api-auth-me">GET /api/auth/me</h3>
+<h3 id="get-api-auth-me" class="endpoint"><span class="method get">GET</span><code>/api/auth/me</code></h3>
 <p>Obtiene el usuario actual (requiere autenticación).</p>
 <p><strong>Headers:</strong></p>
-<pre><code>Authorization: Bearer &lt;token&gt;</code></pre>
+<pre><button class="copy" type="button">copy</button><code>Authorization: Bearer &lt;token&gt;</code></pre>
 <hr>
-<h3 id="put-api-auth-me">PUT /api/auth/me</h3>
+<h3 id="put-api-auth-me" class="endpoint"><span class="method put">PUT</span><code>/api/auth/me</code></h3>
 <p>Actualiza el perfil del usuario actual.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;name&quot;: &quot;Nuevo Nombre&quot;,
   &quot;bio&quot;: &quot;Mi bio&quot;,
   &quot;avatar&quot;: &quot;https://...&quot;,
@@ -520,44 +515,44 @@ npx prisma studio</code></pre>
   &quot;websiteUrl&quot;: &quot;https://miweb.com&quot;
 }</code></pre>
 <hr>
-<h3 id="get-api-auth-users">GET /api/auth/users</h3>
+<h3 id="get-api-auth-users" class="endpoint"><span class="method get">GET</span><code>/api/auth/users</code></h3>
 <p>Lista todos los usuarios (requiere autenticación).</p>
 <hr>
-<h3 id="get-api-auth-users-id">GET /api/auth/users/:id</h3>
+<h3 id="get-api-auth-users-id" class="endpoint"><span class="method get">GET</span><code>/api/auth/users/:id</code></h3>
 <p>Obtiene perfil público de un usuario.</p>
 <hr>
-<h3 id="get-api-auth-roles">GET /api/auth/roles</h3>
+<h3 id="get-api-auth-roles" class="endpoint"><span class="method get">GET</span><code>/api/auth/roles</code></h3>
 <p>Lista todos los roles disponibles.</p>
 <hr>
-<h3 id="put-api-auth-users-id-role">PUT /api/auth/users/:id/role</h3>
+<h3 id="put-api-auth-users-id-role" class="endpoint"><span class="method put">PUT</span><code>/api/auth/users/:id/role</code></h3>
 <p>Cambia el rol de un usuario.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;roleId&quot;: 2
 }</code></pre>
 <hr>
 <h2 id="proyectos">Proyectos</h2>
-<h3 id="get-api-projects">GET /api/projects</h3>
+<h3 id="get-api-projects" class="endpoint"><span class="method get">GET</span><code>/api/projects</code></h3>
 <p>Lista todos los proyectos.</p>
-<h3 id="get-api-projects-id">GET /api/projects/:id</h3>
+<h3 id="get-api-projects-id" class="endpoint"><span class="method get">GET</span><code>/api/projects/:id</code></h3>
 <p>Obtiene un proyecto específico con todos sus datos.</p>
-<h3 id="post-api-projects">POST /api/projects</h3>
+<h3 id="post-api-projects" class="endpoint"><span class="method post">POST</span><code>/api/projects</code></h3>
 <p>Crea un nuevo proyecto.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;name&quot;: &quot;Mi Proyecto&quot;,
   &quot;description&quot;: &quot;Descripción&quot;,
   &quot;status&quot;: &quot;ACTIVE&quot;,
   &quot;publicUrl&quot;: &quot;https://mi-proyecto.com&quot;
 }</code></pre>
-<h3 id="put-api-projects-id">PUT /api/projects/:id</h3>
+<h3 id="put-api-projects-id" class="endpoint"><span class="method put">PUT</span><code>/api/projects/:id</code></h3>
 <p>Actualiza un proyecto.</p>
-<h3 id="delete-api-projects-id">DELETE /api/projects/:id</h3>
+<h3 id="delete-api-projects-id" class="endpoint"><span class="method delete">DELETE</span><code>/api/projects/:id</code></h3>
 <p>Elimina un proyecto.</p>
-<h3 id="post-api-projects-id-metrics">POST /api/projects/:id/metrics</h3>
+<h3 id="post-api-projects-id-metrics" class="endpoint"><span class="method post">POST</span><code>/api/projects/:id/metrics</code></h3>
 <p>Agrega métricas de usuarios.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;totalUsers&quot;: 100,
   &quot;activeUsers&quot;: 50,
   &quot;paidUsers&quot;: 20,
@@ -567,30 +562,30 @@ npx prisma studio</code></pre>
 }</code></pre>
 <hr>
 <h2 id="infraestructura">Infraestructura</h2>
-<h3 id="get-api-vps-providers">GET /api/vps/providers</h3>
+<h3 id="get-api-vps-providers" class="endpoint"><span class="method get">GET</span><code>/api/vps/providers</code></h3>
 <p>Lista proveedores.</p>
-<h3 id="post-api-vps-providers">POST /api/vps/providers</h3>
+<h3 id="post-api-vps-providers" class="endpoint"><span class="method post">POST</span><code>/api/vps/providers</code></h3>
 <p>Crea proveedor.</p>
-<h3 id="get-api-vps-servers">GET /api/vps/servers</h3>
+<h3 id="get-api-vps-servers" class="endpoint"><span class="method get">GET</span><code>/api/vps/servers</code></h3>
 <p>Lista servidores VPS.</p>
-<h3 id="post-api-vps-servers">POST /api/vps/servers</h3>
+<h3 id="post-api-vps-servers" class="endpoint"><span class="method post">POST</span><code>/api/vps/servers</code></h3>
 <p>Crea servidor VPS.</p>
-<h3 id="post-api-vps-servers-id-link">POST /api/vps/servers/:id/link</h3>
+<h3 id="post-api-vps-servers-id-link" class="endpoint"><span class="method post">POST</span><code>/api/vps/servers/:id/link</code></h3>
 <p>Vincula servidor a proyecto.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;projectId&quot;: 1,
   &quot;costShare&quot;: 50
 }</code></pre>
-<h3 id="get-api-vps-items">GET /api/vps/items</h3>
+<h3 id="get-api-vps-items" class="endpoint"><span class="method get">GET</span><code>/api/vps/items</code></h3>
 <p>Lista items de infraestructura.</p>
-<h3 id="post-api-vps-items">POST /api/vps/items</h3>
+<h3 id="post-api-vps-items" class="endpoint"><span class="method post">POST</span><code>/api/vps/items</code></h3>
 <p>Crea item.</p>
-<h3 id="get-api-vps-costs">GET /api/vps/costs</h3>
+<h3 id="get-api-vps-costs" class="endpoint"><span class="method get">GET</span><code>/api/vps/costs</code></h3>
 <p>Resumen de costos mensuales.</p>
 <hr>
 <h2 id="finanzas">Finanzas</h2>
-<h3 id="get-api-finance-transactions">GET /api/finance/transactions</h3>
+<h3 id="get-api-finance-transactions" class="endpoint"><span class="method get">GET</span><code>/api/finance/transactions</code></h3>
 <p>Lista transacciones.</p>
 <p><strong>Query params:</strong></p>
 <ul>
@@ -599,10 +594,10 @@ npx prisma studio</code></pre>
 <li><code>startDate</code> - Fecha inicio</li>
 <li><code>endDate</code> - Fecha fin</li>
 </ul>
-<h3 id="post-api-finance-transactions">POST /api/finance/transactions</h3>
+<h3 id="post-api-finance-transactions" class="endpoint"><span class="method post">POST</span><code>/api/finance/transactions</code></h3>
 <p>Crea transacción.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;projectId&quot;: 1,
   &quot;type&quot;: &quot;INCOME&quot;,
   &quot;amount&quot;: 100.00,
@@ -610,21 +605,21 @@ npx prisma studio</code></pre>
   &quot;description&quot;: &quot;Pago de cliente&quot;,
   &quot;date&quot;: &quot;2024-01-15&quot;
 }</code></pre>
-<h3 id="get-api-finance-summary">GET /api/finance/summary</h3>
+<h3 id="get-api-finance-summary" class="endpoint"><span class="method get">GET</span><code>/api/finance/summary</code></h3>
 <p>Resumen financiero general.</p>
-<h3 id="get-api-finance-rates-latest">GET /api/finance/rates/latest</h3>
+<h3 id="get-api-finance-rates-latest" class="endpoint"><span class="method get">GET</span><code>/api/finance/rates/latest</code></h3>
 <p>Tasas de cambio actuales.</p>
-<h3 id="post-api-finance-rates">POST /api/finance/rates</h3>
+<h3 id="post-api-finance-rates" class="endpoint"><span class="method post">POST</span><code>/api/finance/rates</code></h3>
 <p>Agregar tasa manualmente.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;code&quot;: &quot;EUR&quot;,
   &quot;rate&quot;: 0.85,
   &quot;source&quot;: &quot;manual&quot;
 }</code></pre>
 <hr>
 <h2 id="tareas-y-bugs">Tareas y Bugs</h2>
-<h3 id="get-api-tasks-tasks">GET /api/tasks/tasks</h3>
+<h3 id="get-api-tasks-tasks" class="endpoint"><span class="method get">GET</span><code>/api/tasks/tasks</code></h3>
 <p>Lista tareas.</p>
 <p><strong>Query params:</strong></p>
 <ul>
@@ -632,10 +627,10 @@ npx prisma studio</code></pre>
 <li><code>status</code></li>
 <li><code>assigneeId</code></li>
 </ul>
-<h3 id="post-api-tasks-tasks">POST /api/tasks/tasks</h3>
+<h3 id="post-api-tasks-tasks" class="endpoint"><span class="method post">POST</span><code>/api/tasks/tasks</code></h3>
 <p>Crea tarea.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;projectId&quot;: 1,
   &quot;title&quot;: &quot;Nueva tarea&quot;,
   &quot;description&quot;: &quot;Descripción&quot;,
@@ -644,93 +639,87 @@ npx prisma studio</code></pre>
   &quot;assigneeId&quot;: 1,
   &quot;dueDate&quot;: &quot;2024-01-20&quot;
 }</code></pre>
-<h3 id="get-api-tasks-bugs">GET /api/tasks/bugs</h3>
+<h3 id="get-api-tasks-bugs" class="endpoint"><span class="method get">GET</span><code>/api/tasks/bugs</code></h3>
 <p>Lista bugs.</p>
-<h3 id="post-api-tasks-bugs">POST /api/tasks/bugs</h3>
+<h3 id="post-api-tasks-bugs" class="endpoint"><span class="method post">POST</span><code>/api/tasks/bugs</code></h3>
 <p>Reporta bug.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;projectId&quot;: 1,
   &quot;title&quot;: &quot;Bug encontrado&quot;,
   &quot;description&quot;: &quot;Descripción del bug&quot;,
   &quot;severity&quot;: &quot;high&quot;,
   &quot;status&quot;: &quot;OPEN&quot;
 }</code></pre>
-<h3 id="get-api-tasks-overview">GET /api/tasks/overview</h3>
+<h3 id="get-api-tasks-overview" class="endpoint"><span class="method get">GET</span><code>/api/tasks/overview</code></h3>
 <p>Resumen de tareas y bugs.</p>
 <hr>
 <h2 id="dashboard">Dashboard</h2>
-<h3 id="get-api-dashboard">GET /api/dashboard</h3>
+<h3 id="get-api-dashboard" class="endpoint"><span class="method get">GET</span><code>/api/dashboard</code></h3>
 <p>Overview general del sistema.</p>
-<h3 id="get-api-dashboard-alerts">GET /api/dashboard/alerts</h3>
+<h3 id="get-api-dashboard-alerts" class="endpoint"><span class="method get">GET</span><code>/api/dashboard/alerts</code></h3>
 <p>Lista de alertas del sistema.</p>
-<h3 id="get-api-dashboard-exchange-rate-fetch">GET /api/dashboard/exchange-rate/fetch</h3>
+<h3 id="get-api-dashboard-exchange-rate-fetch" class="endpoint"><span class="method get">GET</span><code>/api/dashboard/exchange-rate/fetch</code></h3>
 <p>Fuerza actualización de tasas de cambio.</p>
-<h3 id="get-api-dashboard-charts-income-expense">GET /api/dashboard/charts/income-expense</h3>
+<h3 id="get-api-dashboard-charts-income-expense" class="endpoint"><span class="method get">GET</span><code>/api/dashboard/charts/income-expense</code></h3>
 <p>Gráfico de ingresos/gastos.</p>
 <p><strong>Query params:</strong></p>
 <ul>
 <li><code>months</code> - Número de meses (default 6)</li>
 </ul>
-<h3 id="get-api-dashboard-charts-project-performance">GET /api/dashboard/charts/project-performance</h3>
+<h3 id="get-api-dashboard-charts-project-performance" class="endpoint"><span class="method get">GET</span><code>/api/dashboard/charts/project-performance</code></h3>
 <p>Rendimiento de proyectos.</p>
 <hr>
 <h2 id="chat">Chat</h2>
-<h3 id="get-api-chat-channels">GET /api/chat/channels</h3>
+<h3 id="get-api-chat-channels" class="endpoint"><span class="method get">GET</span><code>/api/chat/channels</code></h3>
 <p>Lista canales del usuario.</p>
-<h3 id="get-api-chat-channels-id-messages">GET /api/chat/channels/:id/messages</h3>
+<h3 id="get-api-chat-channels-id-messages" class="endpoint"><span class="method get">GET</span><code>/api/chat/channels/:id/messages</code></h3>
 <p>Mensajes de un canal.</p>
-<h3 id="post-api-chat-channels-id-messages">POST /api/chat/channels/:id/messages</h3>
+<h3 id="post-api-chat-channels-id-messages" class="endpoint"><span class="method post">POST</span><code>/api/chat/channels/:id/messages</code></h3>
 <p>Envía mensaje.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;content&quot;: &quot;Hola equipo!&quot;
 }</code></pre>
-<h3 id="post-api-chat-private">POST /api/chat/private</h3>
+<h3 id="post-api-chat-private" class="endpoint"><span class="method post">POST</span><code>/api/chat/private</code></h3>
 <p>Crea canal privado con otro usuario.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;userId&quot;: 2
 }</code></pre>
-<h3 id="websocket-api-chat-ws">WebSocket /api/chat/ws</h3>
+<h3 id="websocket-api-chat-ws" class="endpoint"><span class="method websocket">WebSocket</span><code>/api/chat/ws</code></h3>
 <p>Conectar al chat en tiempo real.</p>
 <p><strong>URL:</strong></p>
-<pre><code>ws://host/api/chat/ws?token=&lt;jwt_token&gt;</code></pre>
+<pre><button class="copy" type="button">copy</button><code>ws://host/api/chat/ws?token=&lt;jwt_token&gt;</code></pre>
 <p><strong>Mensajes (enviar):</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;type&quot;: &quot;message&quot;,
   &quot;channelId&quot;: 1,
   &quot;content&quot;: &quot;Mensaje&quot;
 }</code></pre>
 <p><strong>Mensajes (recibir):</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;type&quot;: &quot;new_message&quot;,
   &quot;channelId&quot;: 1,
   &quot;message&quot;: { ... }
 }</code></pre>
 <hr>
 <h2 id="configuraci-n">Configuración</h2>
-<h3 id="get-api-settings-company">GET /api/settings/company</h3>
+<h3 id="get-api-settings-company" class="endpoint"><span class="method get">GET</span><code>/api/settings/company</code></h3>
 <p>Obtiene configuración de la empresa.</p>
-<h3 id="put-api-settings-company">PUT /api/settings/company</h3>
+<h3 id="put-api-settings-company" class="endpoint"><span class="method put">PUT</span><code>/api/settings/company</code></h3>
 <p>Actualiza configuración.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;companyName&quot;: &quot;Mi Empresa&quot;,
   &quot;companyObjective&quot;: &quot;Objetivo del manager&quot;,
   &quot;companyLogoUrl&quot;: &quot;https://logo.png&quot;
 }</code></pre>
 <hr>
 <h2 id="c-digos-de-error">Códigos de Error</h2>
-<p>| Código | Significado |</p>
-<p>|--------|-------------|</p>
-<p>| 400 | Solicitud inválida |</p>
-<p>| 401 | No autorizado |</p>
-<p>| 403 | Prohibido |</p>
-<p>| 404 | No encontrado |</p>
-<p>| 500 | Error del servidor |</p></section><section id="06-arquitectura" class="doc-section"><h1 id="arquitectura-t-cnica-devfast-manager">Arquitectura Técnica - DevFast Manager</h1>
+<div class="table-wrap"><table><thead><tr><th>Código</th><th>Significado</th></tr></thead><tbody><tr><td>400</td><td>Solicitud inválida</td></tr><tr><td>401</td><td>No autorizado</td></tr><tr><td>403</td><td>Prohibido</td></tr><tr><td>404</td><td>No encontrado</td></tr><tr><td>500</td><td>Error del servidor</td></tr></tbody></table></div></section><section class="doc-section" id="06-arquitectura"><h1 id="arquitectura-t-cnica-devfast-manager">Arquitectura Técnica - DevFast Manager</h1>
 <h2 id="visi-n-general">Visión General</h2>
-<pre><code>┌─────────────────────────────────────────────────────────────┐
+<pre><button class="copy" type="button">copy</button><code>┌─────────────────────────────────────────────────────────────┐
 │                         Frontend                            │
 │              React + Vite + Tailwind + Recharts            │
 └─────────────────────┬───────────────────────────────────────┘
@@ -755,7 +744,7 @@ npx prisma studio</code></pre>
 <li><strong>WebSocket</strong>: @fastify/websocket</li>
 </ul>
 <h3 id="estructura-de-archivos">Estructura de Archivos</h3>
-<pre><code>backend/src/
+<pre><button class="copy" type="button">copy</button><code>backend/src/
 ├── index.ts          # Entry point, configuración de Fastify
 ├── db.ts             # Cliente Prisma singleton
 ├── routes/           # Controladores/endpoints
@@ -785,7 +774,7 @@ npx prisma studio</code></pre>
 <li><strong>Respuesta</strong> se envía al cliente</li>
 </ol>
 <h3 id="autenticaci-n">Autenticación</h3>
-<pre><code>// Decorador authenticate
+<pre><button class="copy" type="button">copy</button><code>// Decorador authenticate
 fastify.decorate(&#x27;authenticate&#x27;, async function(request, reply) {
   try {
     await request.jwtVerify()
@@ -843,7 +832,7 @@ fastify.get(&#x27;/ruta-protegida&#x27;, { preHandler: [fastify.authenticate] },
 <li><strong>Router</strong>: React Router DOM 7</li>
 </ul>
 <h3 id="estructura-de-archivos">Estructura de Archivos</h3>
-<pre><code>frontend/src/
+<pre><button class="copy" type="button">copy</button><code>frontend/src/
 ├── App.tsx            # Router principal
 ├── main.tsx           # Entry point React
 ├── api/
@@ -871,7 +860,7 @@ fastify.get(&#x27;/ruta-protegida&#x27;, { preHandler: [fastify.authenticate] },
 └── utils/
     └── userVisuals.tsx # Avatar, color, iniciales</code></pre>
 <h3 id="cliente-api">Cliente API</h3>
-<pre><code>// API_URL configurable por variable de entorno
+<pre><button class="copy" type="button">copy</button><code>// API_URL configurable por variable de entorno
 const API_URL = import.meta.env.VITE_API_URL || &#x27;http://localhost:3001&#x27;
 
 // Clase con métodos convenientes
@@ -890,12 +879,12 @@ class ApiClient {
 </ul>
 <h3 id="modo-oscuro">Modo Oscuro</h3>
 <p>Implementado con CSS overrides en <code>index.css</code>:</p>
-<pre><code>.dark body { background: #0f172a; }
+<pre><button class="copy" type="button">copy</button><code>.dark body { background: #0f172a; }
 .dark .bg-white { background-color: #111827 !important; }
 /* etc */</code></pre>
 <p>Toggle en Layout usa <code>document.documentElement.classList.toggle(&#x27;dark&#x27;, value)</code> + localStorage.</p>
-<h3 id="websocket-chat">WebSocket (Chat)</h3>
-<pre><code>// Conexión
+<h3 id="websocket-chat" class="endpoint"><span class="method websocket">WebSocket</span><code>(Chat)</code></h3>
+<pre><button class="copy" type="button">copy</button><code>// Conexión
 const socket = new WebSocket(`ws://host/api/chat/ws?token=${token}`)
 
 // Eventos
@@ -912,10 +901,10 @@ socket.onmessage = (event) =&gt; {
 </ul>
 <h3 id="producci-n">Producción</h3>
 <p><strong>Backend:</strong></p>
-<pre><code>npm run build  # compila TypeScript
+<pre><button class="copy" type="button">copy</button><code>npm run build  # compila TypeScript
 npm run start  # node dist/index.js</code></pre>
 <p><strong>Frontend:</strong></p>
-<pre><code>npm run build  # genera dist/
+<pre><button class="copy" type="button">copy</button><code>npm run build  # genera dist/
 npm run preview # sirve dist/</code></pre>
 <h3 id="variables-de-entorno-para-producci-n">Variables de Entorno para Producción</h3>
 <p><strong>Backend:</strong></p>
@@ -968,4 +957,4 @@ npm run preview # sirve dist/</code></pre>
 <li>Upload de archivos (actualmente solo URLs)</li>
 <li>Dashboard más interactivo</li>
 <li>Métricas históricas</li>
-</ul></section></div></div></section></main><footer>DevFast Manager · Docs</footer></body></html>
+</ul></section></div></div></section></main><footer>DevFast Manager · Docs</footer><script>document.querySelector('.mobile-doc-select')?.addEventListener('change',e=>location.hash=e.target.value);document.querySelectorAll('.copy').forEach(b=>b.onclick=async()=>{const t=b.nextElementSibling?.innerText||'';try{await navigator.clipboard.writeText(t);b.textContent='copied';setTimeout(()=>b.textContent='copy',900)}catch{}});</script></body></html>

@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DevFast Manager Docs</title><meta name="description" content="DevFast Manager documentation"><link rel="stylesheet" href="../style.css"></head><body><div class="grain"></div><div class="lang"><button onclick="location.href='./'" class="">ES</button><button onclick="location.href='./en.html'" class="active">EN</button></div><nav><a class="brand" href="../">DevFast Manager</a><div><a href="../">Home</a><a href="./">ES</a><a href="https://github.com/UserZero075/Business-Management-Dashboard">GitHub</a></div></nav><main class="docs-main"><header class="docs-hero"><div><p class="eyebrow">Docs · EN</p><h1>Complete documentation</h1><p>All content comes from the repository Documentation folder: setup, usage, configuration, development, API and architecture.</p></div><div class="doc-stats"><span><b>6</b><small>guides</small></span><span><b>54KB</b><small>Markdown</small></span><span><b>REST</b><small>API</small></span><span><b>Prisma</b><small>DB</small></span></div></header><section class="doc-layout"><aside class="sidebar"><b>Complete documentation</b><a href="#01-quick-start">Quick start</a><a href="#02-user-guide">User guide</a><a href="#03-configuration">Configuration</a><a href="#04-development">Development</a><a href="#05-api">API</a><a href="#06-architecture">Architecture</a></aside><div><div class="doc-index"><a href="#01-quick-start"><b>Quick start</b><small>Install and run backend/frontend in minutes</small></a><a href="#02-user-guide"><b>User guide</b><small>How to operate every system module</small></a><a href="#03-configuration"><b>Configuration</b><small>Environment variables, database, SMTP and production</small></a><a href="#04-development"><b>Development</b><small>Structure, models, API and technical flow</small></a><a href="#05-api"><b>API</b><small>Main REST endpoints and examples</small></a><a href="#06-architecture"><b>Architecture</b><small>Frontend, backend, data, security and scalability</small></a></div><div class="doc-content"><section id="01-quick-start" class="doc-section"><h1 id="devfast-manager-quick-start">DevFast Manager - Quick Start</h1>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DevFast Manager Docs</title><meta name="description" content="DevFast Manager documentation"><link rel="stylesheet" href="../style.css"></head><body class="docs-body"><div class="lang"><button onclick="location.href='./'" class="">ES</button><button onclick="location.href='./en.html'" class="active">EN</button></div><nav><a class="brand" href="../">DevFast Manager</a><div><a href="../">Home</a><a href="./">ES</a><a href="https://github.com/UserZero075/Business-Management-Dashboard">GitHub</a></div></nav><main class="docs-main"><header class="docs-hero"><div class="docs-kicker">Docs · EN</div><h1>DevFast Manager documentation</h1><p>Real repository guides converted to HTML: setup, operation, configuration, development, API and architecture.</p><div class="docs-actions"><a class="active" href="#01-quick-start">Start</a><a href="https://github.com/UserZero075/Business-Management-Dashboard/tree/main/Documentation/en">Markdown source</a></div></header><section class="docs-cards"><a href="#01-quick-start"><b>Quick start</b><small>Requirements, local installation, first use and common issues.</small></a><a href="#02-user-guide"><b>User guide</b><small>Walkthrough for Dashboard, Projects, Infrastructure, Finance, Team and Chat.</small></a><a href="#03-configuration"><b>Configuration</b><small>Environment variables, database, SMTP, production and security.</small></a><a href="#04-development"><b>Development</b><small>Project structure, routes, pages, Prisma, styles and debugging.</small></a><a href="#05-api"><b>API</b><small>REST endpoints, authentication, payloads, WebSocket and error codes.</small></a><a href="#06-architecture"><b>Architecture</b><small>Layers, data flow, models, services, security and scalability.</small></a></section><section class="docs-grid"><aside class="docs-sidebar"><a href="#01-quick-start"><span>1</span>Quick start</a><a href="#02-user-guide"><span>2</span>User guide</a><a href="#03-configuration"><span>3</span>Configuration</a><a href="#04-development"><span>4</span>Development</a><a href="#05-api"><span>5</span>API</a><a href="#06-architecture"><span>6</span>Architecture</a></aside><div><select class="mobile-doc-select"><option value="">Go to section</option><option value="#01-quick-start">Quick start</option><option value="#02-user-guide">User guide</option><option value="#03-configuration">Configuration</option><option value="#04-development">Development</option><option value="#05-api">API</option><option value="#06-architecture">Architecture</option></select><div class="doc-content"><section class="doc-section" id="01-quick-start"><h1 id="devfast-manager-quick-start">DevFast Manager - Quick Start</h1>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
 <li><strong>Node.js</strong> 20.x or higher</li>
@@ -6,10 +6,10 @@
 </ul>
 <h2 id="installation-in-5-minutes">Installation in 5 Minutes</h2>
 <h3 id="1-clone-the-project">1. Clone the project</h3>
-<pre><code>git clone https://github.com/UserZero075/Business-Management-Dashboard.git
+<pre><button class="copy" type="button">copy</button><code>git clone https://github.com/UserZero075/Business-Management-Dashboard.git
 cd Business-Management-Dashboard</code></pre>
 <h3 id="2-install-dependencies">2. Install dependencies</h3>
-<pre><code># Backend
+<pre><button class="copy" type="button">copy</button><code># Backend
 cd backend
 npm install
 
@@ -17,14 +17,14 @@ npm install
 cd ../frontend
 npm install</code></pre>
 <h3 id="3-setup-database">3. Setup database</h3>
-<pre><code>cd backend
+<pre><button class="copy" type="button">copy</button><code>cd backend
 npx prisma db push</code></pre>
 <h3 id="4-start-servers">4. Start servers</h3>
 <p><strong>Terminal 1 - Backend (port 3001):</strong></p>
-<pre><code>cd backend
+<pre><button class="copy" type="button">copy</button><code>cd backend
 npm run dev</code></pre>
 <p><strong>Terminal 2 - Frontend (port 5173):</strong></p>
-<pre><code>cd frontend
+<pre><button class="copy" type="button">copy</button><code>cd frontend
 npm run dev</code></pre>
 <h3 id="5-access">5. Access</h3>
 <p>Open your browser: <strong>http://localhost:5173</strong></p>
@@ -40,26 +40,26 @@ npm run dev</code></pre>
 <p>The first registered user becomes <strong>administrator</strong>.</p>
 <h2 id="update-to-production">Update to Production</h2>
 <h3 id="backend">Backend</h3>
-<pre><code>cd backend
+<pre><button class="copy" type="button">copy</button><code>cd backend
 npm run build
 npm run start</code></pre>
 <h3 id="frontend">Frontend</h3>
-<pre><code>cd frontend
+<pre><button class="copy" type="button">copy</button><code>cd frontend
 npm run build
 npm run preview</code></pre>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <h3 id="cannot-find-module">&quot;Cannot find module&quot;</h3>
 <p>Reinstall dependencies:</p>
-<pre><code>npm install</code></pre>
+<pre><button class="copy" type="button">copy</button><code>npm install</code></pre>
 <h3 id="database-error">Database error</h3>
 <p>Sync Prisma schema:</p>
-<pre><code>npx prisma db push</code></pre>
+<pre><button class="copy" type="button">copy</button><code>npx prisma db push</code></pre>
 <h3 id="port-in-use">Port in use</h3>
 <p>Kill processes on ports:</p>
-<pre><code>kill $(lsof -t -i :3001)  # Backend
+<pre><button class="copy" type="button">copy</button><code>kill $(lsof -t -i :3001)  # Backend
 kill $(lsof -t -i :5173)  # Frontend</code></pre>
 <h2 id="next-step">Next Step</h2>
-<p>See the <a href="./02-user-guide.md">User Guide</a> to learn how to use all system features.</p></section><section id="02-user-guide" class="doc-section"><h1 id="user-guide-devfast-manager">User Guide - DevFast Manager</h1>
+<p>See the <a href="./02-user-guide.md">User Guide</a> to learn how to use all system features.</p></section><section class="doc-section" id="02-user-guide"><h1 id="user-guide-devfast-manager">User Guide - DevFast Manager</h1>
 <h2 id="introduction">Introduction</h2>
 <p>DevFast Manager is a comprehensive management system that allows you to administer projects, infrastructure, finance, team, and tasks from a single platform.</p>
 <h2 id="navigation">Navigation</h2>
@@ -179,11 +179,11 @@ kill $(lsof -t -i :5173)  # Frontend</code></pre>
 <li><strong>Link resources</strong>: Associate VPS and infrastructure to projects to see actual costs</li>
 <li><strong>Update metrics</strong>: Regularly record users for each project</li>
 <li><strong>Check notifications</strong>: Stay up to date with team activity</li>
-</ol></section><section id="03-configuration" class="doc-section"><h1 id="configuration-devfast-manager">Configuration - DevFast Manager</h1>
+</ol></section><section class="doc-section" id="03-configuration"><h1 id="configuration-devfast-manager">Configuration - DevFast Manager</h1>
 <h2 id="environment-variables">Environment Variables</h2>
 <p>The <code>.env</code> file in the <code>backend/</code> folder contains the system configuration.</p>
 <h3 id="database">Database</h3>
-<pre><code># SQLite (default)
+<pre><button class="copy" type="button">copy</button><code># SQLite (default)
 DATABASE_URL=&quot;file:./devfast.db&quot;
 
 # MySQL
@@ -192,7 +192,7 @@ DATABASE_URL=&quot;mysql://user:password@localhost:3306/devfast&quot;
 # PostgreSQL
 DATABASE_URL=&quot;postgresql://user:password@localhost:5432/devfast&quot;</code></pre>
 <h3 id="server">Server</h3>
-<pre><code># Port where backend will listen
+<pre><button class="copy" type="button">copy</button><code># Port where backend will listen
 PORT=3001
 
 # Host (0.0.0.0 for all interfaces)
@@ -201,10 +201,10 @@ HOST=0.0.0.0
 # JWT secret (change in production!)
 JWT_SECRET=&quot;your-very-long-and-secure-secret-key&quot;</code></pre>
 <h3 id="exchange-rates">Exchange Rates</h3>
-<pre><code># El Toque URL for fetching rates (optional)
+<pre><button class="copy" type="button">copy</button><code># El Toque URL for fetching rates (optional)
 EL_TOQUE_URL=&quot;https://eltoque.com/tasas-de-cambio-de-moneda-en-cuba-hoy&quot;</code></pre>
 <h3 id="smtp-mail-for-otp">SMTP Mail (for OTP)</h3>
-<pre><code># SMTP server
+<pre><button class="copy" type="button">copy</button><code># SMTP server
 SMTP_HOST=&quot;smtp.gmail.com&quot;
 SMTP_PORT=587
 SMTP_USER=&quot;your-email@gmail.com&quot;
@@ -214,20 +214,20 @@ SMTP_FROM=&quot;your-email@gmail.com&quot;
 # true for port 465, false for 587/25
 SMTP_SECURE=false</code></pre>
 <h3 id="environment">Environment</h3>
-<pre><code># development or production
+<pre><button class="copy" type="button">copy</button><code># development or production
 NODE_ENV=development</code></pre>
 <h2 id="frontend-url-configuration">Frontend URL Configuration</h2>
 <p>The frontend needs to know where the backend is:</p>
-<pre><code># Development
+<pre><button class="copy" type="button">copy</button><code># Development
 VITE_API_URL=http://localhost:3001 npm run dev
 
 # Production with specific IP
 VITE_API_URL=http://100.x.x.x:3001 npm run build</code></pre>
 <p>Or edit directly in <code>frontend/src/api/client.ts</code>:</p>
-<pre><code>const API_URL = import.meta.env.VITE_API_URL || &#x27;http://localhost:3001&#x27;;</code></pre>
+<pre><button class="copy" type="button">copy</button><code>const API_URL = import.meta.env.VITE_API_URL || &#x27;http://localhost:3001&#x27;;</code></pre>
 <h2 id="vps-deployment">VPS Deployment</h2>
 <h3 id="automatic-script">Automatic Script</h3>
-<pre><code>chmod +x deploy.sh
+<pre><button class="copy" type="button">copy</button><code>chmod +x deploy.sh
 ./deploy.sh</code></pre>
 <p>The script:</p>
 <ol>
@@ -239,7 +239,7 @@ VITE_API_URL=http://100.x.x.x:3001 npm run build</code></pre>
 <li>Asks if you want to start in background</li>
 </ol>
 <h3 id="manual">Manual</h3>
-<pre><code># Backend
+<pre><button class="copy" type="button">copy</button><code># Backend
 cd backend
 npm install
 npx prisma db push
@@ -266,24 +266,19 @@ npm run preview -- --host --port 80</code></pre>
 <li><strong>Firewall</strong>: If using VPS, configure firewall rules to limit access</li>
 </ol>
 <h2 id="common-ports">Common Ports</h2>
-<p>| Service | Port | Description |</p>
-<p>|----------|--------|-------------|</p>
-<p>| Backend API | 3001 | REST API |</p>
-<p>| Frontend Dev | 5173 | Development server |</p>
-<p>| Frontend Prod | 4173 | Preview server |</p>
-<p>| Nginx (custom) | 80 | Production with nginx |</p>
+<div class="table-wrap"><table><thead><tr><th>Service</th><th>Port</th><th>Description</th></tr></thead><tbody><tr><td>Backend API</td><td>3001</td><td>REST API</td></tr><tr><td>Frontend Dev</td><td>5173</td><td>Development server</td></tr><tr><td>Frontend Prod</td><td>4173</td><td>Preview server</td></tr><tr><td>Nginx (custom)</td><td>80</td><td>Production with nginx</td></tr></tbody></table></div>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <h3 id="database-connection-error">Database connection error</h3>
-<pre><code>npx prisma db push</code></pre>
+<pre><button class="copy" type="button">copy</button><code>npx prisma db push</code></pre>
 <h3 id="port-in-use">Port in use</h3>
-<pre><code>lsof -i :3001
+<pre><button class="copy" type="button">copy</button><code>lsof -i :3001
 kill -9 PID</code></pre>
 <h3 id="cors-error">CORS error</h3>
 <p>Make sure the backend is listening on <code>0.0.0.0</code> and the frontend has the correct URL in <code>VITE_API_URL</code>.</p>
 <h3 id="otp-doesn-t-reach-email">OTP doesn&#x27;t reach email</h3>
-<p>Verify SMTP configuration. The code is also shown in the server console if <code>NODE_ENV=development</code>.</p></section><section id="04-development" class="doc-section"><h1 id="development-guide-devfast-manager">Development Guide - DevFast Manager</h1>
+<p>Verify SMTP configuration. The code is also shown in the server console if <code>NODE_ENV=development</code>.</p></section><section class="doc-section" id="04-development"><h1 id="development-guide-devfast-manager">Development Guide - DevFast Manager</h1>
 <h2 id="project-structure">Project Structure</h2>
-<pre><code>DevFast Manager/
+<pre><button class="copy" type="button">copy</button><code>DevFast Manager/
 ├── backend/
 │   ├── src/
 │   │   ├── routes/        # API endpoints
@@ -328,7 +323,7 @@ kill -9 PID</code></pre>
     └── en/  # English documentation</code></pre>
 <h2 id="development-commands">Development Commands</h2>
 <h3 id="backend">Backend</h3>
-<pre><code>cd backend
+<pre><button class="copy" type="button">copy</button><code>cd backend
 
 # Development with hot-reload
 npm run dev
@@ -345,7 +340,7 @@ npx prisma generate
 # Sync database
 npx prisma db push</code></pre>
 <h3 id="frontend">Frontend</h3>
-<pre><code>cd frontend
+<pre><button class="copy" type="button">copy</button><code>cd frontend
 
 # Development
 npm run dev
@@ -360,7 +355,7 @@ npm run preview</code></pre>
 <li>Create file in <code>backend/src/routes/</code></li>
 <li>Register in <code>backend/src/index.ts</code>:</li>
 </ol>
-<pre><code>import newRoute from &#x27;./routes/newRoute.js&#x27;
+<pre><button class="copy" type="button">copy</button><code>import newRoute from &#x27;./routes/newRoute.js&#x27;
 
 await fastify.register(newRoute, { prefix: &#x27;/api/new&#x27; })</code></pre>
 <h2 id="adding-new-frontend-page">Adding New Frontend Page</h2>
@@ -368,22 +363,22 @@ await fastify.register(newRoute, { prefix: &#x27;/api/new&#x27; })</code></pre>
 <li>Create component in <code>frontend/src/pages/</code></li>
 <li>Register route in <code>frontend/src/App.tsx</code>:</li>
 </ol>
-<pre><code>import NewPage from &#x27;./pages/NewPage&#x27;
+<pre><button class="copy" type="button">copy</button><code>import NewPage from &#x27;./pages/NewPage&#x27;
 
 &lt;Route path=&quot;/new&quot; element={&lt;NewPage /&gt;} /&gt;</code></pre>
 <h2 id="database">Database</h2>
 <h3 id="prisma-schema">Prisma Schema</h3>
 <p>Edit <code>backend/prisma/schema.prisma</code> to modify models:</p>
-<pre><code>model NewModel {
+<pre><button class="copy" type="button">copy</button><code>model NewModel {
   id        Int      @id @default(autoincrement())
   field     String
   relation  Relation @relation(...)
 }</code></pre>
 <p>Then:</p>
-<pre><code>npx prisma db push
+<pre><button class="copy" type="button">copy</button><code>npx prisma db push
 npx prisma generate</code></pre>
 <h3 id="prisma-queries">Prisma Queries</h3>
-<pre><code>// Find one
+<pre><button class="copy" type="button">copy</button><code>// Find one
 const user = await prisma.user.findUnique({ where: { id: 1 } })
 
 // Create
@@ -402,7 +397,7 @@ await prisma.user.delete({ where: { id: 1 } })</code></pre>
 <h2 id="styles">Styles</h2>
 <p>The frontend uses Tailwind CSS. Dark mode classes are configured in <code>frontend/src/index.css</code>.</p>
 <h3 id="system-colors">System Colors</h3>
-<pre><code>/* Light mode */
+<pre><button class="copy" type="button">copy</button><code>/* Light mode */
 .bg-gray-50
 .bg-white
 .text-gray-800
@@ -411,7 +406,7 @@ await prisma.user.delete({ where: { id: 1 } })</code></pre>
 .dark .bg-gray-50 { background-color: #0f172a; }
 .dark .text-gray-800 { color: #e5e7eb; }</code></pre>
 <h2 id="testing">Testing</h2>
-<pre><code># Backend - verify compilation
+<pre><button class="copy" type="button">copy</button><code># Backend - verify compilation
 npm run build
 
 # Frontend - verify build
@@ -422,13 +417,13 @@ npm run build
 npm run lint</code></pre>
 <h2 id="adding-dependency">Adding Dependency</h2>
 <h3 id="backend">Backend</h3>
-<pre><code>cd backend
+<pre><button class="copy" type="button">copy</button><code>cd backend
 npm install package-name</code></pre>
 <h3 id="frontend">Frontend</h3>
-<pre><code>cd frontend
+<pre><button class="copy" type="button">copy</button><code>cd frontend
 npm install package-name</code></pre>
 <h2 id="environment-variables-for-development">Environment Variables for Development</h2>
-<pre><code># Backend
+<pre><button class="copy" type="button">copy</button><code># Backend
 DATABASE_URL=&quot;file:./devfast.db&quot;
 JWT_SECRET=&quot;dev-secret&quot;
 PORT=3001
@@ -441,7 +436,7 @@ VITE_API_URL=http://localhost:3001</code></pre>
 <h3 id="network-inspection">Network inspection</h3>
 <p>Use browser developer tools (F12 &gt; Network) to see API requests.</p>
 <h3 id="database">Database</h3>
-<pre><code># Open Prisma studio
+<pre><button class="copy" type="button">copy</button><code># Open Prisma studio
 npx prisma studio</code></pre>
 <h2 id="code-conventions">Code Conventions</h2>
 <ul>
@@ -450,32 +445,32 @@ npx prisma studio</code></pre>
 <li>React components in PascalCase (ProjectManager.tsx)</li>
 <li>Hooks with &quot;use&quot; prefix (useAuth.tsx)</li>
 <li>API routes in kebab-case (/api/my-resource)</li>
-</ul></section><section id="05-api" class="doc-section"><h1 id="api-documentation-devfast-manager">API Documentation - DevFast Manager</h1>
+</ul></section><section class="doc-section" id="05-api"><h1 id="api-documentation-devfast-manager">API Documentation - DevFast Manager</h1>
 <h2 id="authentication">Authentication</h2>
-<h3 id="post-api-auth-request-otp">POST /api/auth/request-otp</h3>
+<h3 id="post-api-auth-request-otp" class="endpoint"><span class="method post">POST</span><code>/api/auth/request-otp</code></h3>
 <p>Request an OTP code for registration.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;email&quot;: &quot;user@example.com&quot;
 }</code></pre>
 <p><strong>Response:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;success&quot;: true,
   &quot;expiresAt&quot;: &quot;2024-01-01T12:00:00.000Z&quot;,
   &quot;devCode&quot;: &quot;123456&quot;  // Only in development
 }</code></pre>
 <hr>
-<h3 id="post-api-auth-register">POST /api/auth/register</h3>
+<h3 id="post-api-auth-register" class="endpoint"><span class="method post">POST</span><code>/api/auth/register</code></h3>
 <p>Register a new user.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;email&quot;: &quot;user@example.com&quot;,
   &quot;password&quot;: &quot;password123&quot;,
   &quot;name&quot;: &quot;User Name&quot;,
   &quot;otp&quot;: &quot;123456&quot;
 }</code></pre>
 <p><strong>Response:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;user&quot;: {
     &quot;id&quot;: 1,
     &quot;email&quot;: &quot;...&quot;,
@@ -492,24 +487,24 @@ npx prisma studio</code></pre>
   &quot;token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...&quot;
 }</code></pre>
 <hr>
-<h3 id="post-api-auth-login">POST /api/auth/login</h3>
+<h3 id="post-api-auth-login" class="endpoint"><span class="method post">POST</span><code>/api/auth/login</code></h3>
 <p>Log in.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;email&quot;: &quot;user@example.com&quot;,
   &quot;password&quot;: &quot;password123&quot;
 }</code></pre>
 <p><strong>Response:</strong> Same format as register.</p>
 <hr>
-<h3 id="get-api-auth-me">GET /api/auth/me</h3>
+<h3 id="get-api-auth-me" class="endpoint"><span class="method get">GET</span><code>/api/auth/me</code></h3>
 <p>Get current user (requires authentication).</p>
 <p><strong>Headers:</strong></p>
-<pre><code>Authorization: Bearer &lt;token&gt;</code></pre>
+<pre><button class="copy" type="button">copy</button><code>Authorization: Bearer &lt;token&gt;</code></pre>
 <hr>
-<h3 id="put-api-auth-me">PUT /api/auth/me</h3>
+<h3 id="put-api-auth-me" class="endpoint"><span class="method put">PUT</span><code>/api/auth/me</code></h3>
 <p>Update current user&#x27;s profile.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;name&quot;: &quot;New Name&quot;,
   &quot;bio&quot;: &quot;My bio&quot;,
   &quot;avatar&quot;: &quot;https://...&quot;,
@@ -520,44 +515,44 @@ npx prisma studio</code></pre>
   &quot;websiteUrl&quot;: &quot;https://mywebsite.com&quot;
 }</code></pre>
 <hr>
-<h3 id="get-api-auth-users">GET /api/auth/users</h3>
+<h3 id="get-api-auth-users" class="endpoint"><span class="method get">GET</span><code>/api/auth/users</code></h3>
 <p>List all users (requires authentication).</p>
 <hr>
-<h3 id="get-api-auth-users-id">GET /api/auth/users/:id</h3>
+<h3 id="get-api-auth-users-id" class="endpoint"><span class="method get">GET</span><code>/api/auth/users/:id</code></h3>
 <p>Get public profile of a user.</p>
 <hr>
-<h3 id="get-api-auth-roles">GET /api/auth/roles</h3>
+<h3 id="get-api-auth-roles" class="endpoint"><span class="method get">GET</span><code>/api/auth/roles</code></h3>
 <p>List all available roles.</p>
 <hr>
-<h3 id="put-api-auth-users-id-role">PUT /api/auth/users/:id/role</h3>
+<h3 id="put-api-auth-users-id-role" class="endpoint"><span class="method put">PUT</span><code>/api/auth/users/:id/role</code></h3>
 <p>Change a user&#x27;s role.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;roleId&quot;: 2
 }</code></pre>
 <hr>
 <h2 id="projects">Projects</h2>
-<h3 id="get-api-projects">GET /api/projects</h3>
+<h3 id="get-api-projects" class="endpoint"><span class="method get">GET</span><code>/api/projects</code></h3>
 <p>List all projects.</p>
-<h3 id="get-api-projects-id">GET /api/projects/:id</h3>
+<h3 id="get-api-projects-id" class="endpoint"><span class="method get">GET</span><code>/api/projects/:id</code></h3>
 <p>Get specific project with all data.</p>
-<h3 id="post-api-projects">POST /api/projects</h3>
+<h3 id="post-api-projects" class="endpoint"><span class="method post">POST</span><code>/api/projects</code></h3>
 <p>Create a new project.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;name&quot;: &quot;My Project&quot;,
   &quot;description&quot;: &quot;Description&quot;,
   &quot;status&quot;: &quot;ACTIVE&quot;,
   &quot;publicUrl&quot;: &quot;https://my-project.com&quot;
 }</code></pre>
-<h3 id="put-api-projects-id">PUT /api/projects/:id</h3>
+<h3 id="put-api-projects-id" class="endpoint"><span class="method put">PUT</span><code>/api/projects/:id</code></h3>
 <p>Update a project.</p>
-<h3 id="delete-api-projects-id">DELETE /api/projects/:id</h3>
+<h3 id="delete-api-projects-id" class="endpoint"><span class="method delete">DELETE</span><code>/api/projects/:id</code></h3>
 <p>Delete a project.</p>
-<h3 id="post-api-projects-id-metrics">POST /api/projects/:id/metrics</h3>
+<h3 id="post-api-projects-id-metrics" class="endpoint"><span class="method post">POST</span><code>/api/projects/:id/metrics</code></h3>
 <p>Add user metrics.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;totalUsers&quot;: 100,
   &quot;activeUsers&quot;: 50,
   &quot;paidUsers&quot;: 20,
@@ -567,30 +562,30 @@ npx prisma studio</code></pre>
 }</code></pre>
 <hr>
 <h2 id="infrastructure">Infrastructure</h2>
-<h3 id="get-api-vps-providers">GET /api/vps/providers</h3>
+<h3 id="get-api-vps-providers" class="endpoint"><span class="method get">GET</span><code>/api/vps/providers</code></h3>
 <p>List providers.</p>
-<h3 id="post-api-vps-providers">POST /api/vps/providers</h3>
+<h3 id="post-api-vps-providers" class="endpoint"><span class="method post">POST</span><code>/api/vps/providers</code></h3>
 <p>Create provider.</p>
-<h3 id="get-api-vps-servers">GET /api/vps/servers</h3>
+<h3 id="get-api-vps-servers" class="endpoint"><span class="method get">GET</span><code>/api/vps/servers</code></h3>
 <p>List VPS servers.</p>
-<h3 id="post-api-vps-servers">POST /api/vps/servers</h3>
+<h3 id="post-api-vps-servers" class="endpoint"><span class="method post">POST</span><code>/api/vps/servers</code></h3>
 <p>Create VPS server.</p>
-<h3 id="post-api-vps-servers-id-link">POST /api/vps/servers/:id/link</h3>
+<h3 id="post-api-vps-servers-id-link" class="endpoint"><span class="method post">POST</span><code>/api/vps/servers/:id/link</code></h3>
 <p>Link server to project.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;projectId&quot;: 1,
   &quot;costShare&quot;: 50
 }</code></pre>
-<h3 id="get-api-vps-items">GET /api/vps/items</h3>
+<h3 id="get-api-vps-items" class="endpoint"><span class="method get">GET</span><code>/api/vps/items</code></h3>
 <p>List infrastructure items.</p>
-<h3 id="post-api-vps-items">POST /api/vps/items</h3>
+<h3 id="post-api-vps-items" class="endpoint"><span class="method post">POST</span><code>/api/vps/items</code></h3>
 <p>Create item.</p>
-<h3 id="get-api-vps-costs">GET /api/vps/costs</h3>
+<h3 id="get-api-vps-costs" class="endpoint"><span class="method get">GET</span><code>/api/vps/costs</code></h3>
 <p>Monthly costs summary.</p>
 <hr>
 <h2 id="finances">Finances</h2>
-<h3 id="get-api-finance-transactions">GET /api/finance/transactions</h3>
+<h3 id="get-api-finance-transactions" class="endpoint"><span class="method get">GET</span><code>/api/finance/transactions</code></h3>
 <p>List transactions.</p>
 <p><strong>Query params:</strong></p>
 <ul>
@@ -599,10 +594,10 @@ npx prisma studio</code></pre>
 <li><code>startDate</code> - Start date</li>
 <li><code>endDate</code> - End date</li>
 </ul>
-<h3 id="post-api-finance-transactions">POST /api/finance/transactions</h3>
+<h3 id="post-api-finance-transactions" class="endpoint"><span class="method post">POST</span><code>/api/finance/transactions</code></h3>
 <p>Create transaction.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;projectId&quot;: 1,
   &quot;type&quot;: &quot;INCOME&quot;,
   &quot;amount&quot;: 100.00,
@@ -610,21 +605,21 @@ npx prisma studio</code></pre>
   &quot;description&quot;: &quot;Client payment&quot;,
   &quot;date&quot;: &quot;2024-01-15&quot;
 }</code></pre>
-<h3 id="get-api-finance-summary">GET /api/finance/summary</h3>
+<h3 id="get-api-finance-summary" class="endpoint"><span class="method get">GET</span><code>/api/finance/summary</code></h3>
 <p>General financial summary.</p>
-<h3 id="get-api-finance-rates-latest">GET /api/finance/rates/latest</h3>
+<h3 id="get-api-finance-rates-latest" class="endpoint"><span class="method get">GET</span><code>/api/finance/rates/latest</code></h3>
 <p>Current exchange rates.</p>
-<h3 id="post-api-finance-rates">POST /api/finance/rates</h3>
+<h3 id="post-api-finance-rates" class="endpoint"><span class="method post">POST</span><code>/api/finance/rates</code></h3>
 <p>Add rate manually.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;code&quot;: &quot;EUR&quot;,
   &quot;rate&quot;: 0.85,
   &quot;source&quot;: &quot;manual&quot;
 }</code></pre>
 <hr>
 <h2 id="tasks-and-bugs">Tasks and Bugs</h2>
-<h3 id="get-api-tasks-tasks">GET /api/tasks/tasks</h3>
+<h3 id="get-api-tasks-tasks" class="endpoint"><span class="method get">GET</span><code>/api/tasks/tasks</code></h3>
 <p>List tasks.</p>
 <p><strong>Query params:</strong></p>
 <ul>
@@ -632,10 +627,10 @@ npx prisma studio</code></pre>
 <li><code>status</code></li>
 <li><code>assigneeId</code></li>
 </ul>
-<h3 id="post-api-tasks-tasks">POST /api/tasks/tasks</h3>
+<h3 id="post-api-tasks-tasks" class="endpoint"><span class="method post">POST</span><code>/api/tasks/tasks</code></h3>
 <p>Create task.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;projectId&quot;: 1,
   &quot;title&quot;: &quot;New task&quot;,
   &quot;description&quot;: &quot;Description&quot;,
@@ -644,93 +639,87 @@ npx prisma studio</code></pre>
   &quot;assigneeId&quot;: 1,
   &quot;dueDate&quot;: &quot;2024-01-20&quot;
 }</code></pre>
-<h3 id="get-api-tasks-bugs">GET /api/tasks/bugs</h3>
+<h3 id="get-api-tasks-bugs" class="endpoint"><span class="method get">GET</span><code>/api/tasks/bugs</code></h3>
 <p>List bugs.</p>
-<h3 id="post-api-tasks-bugs">POST /api/tasks/bugs</h3>
+<h3 id="post-api-tasks-bugs" class="endpoint"><span class="method post">POST</span><code>/api/tasks/bugs</code></h3>
 <p>Report bug.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;projectId&quot;: 1,
   &quot;title&quot;: &quot;Bug found&quot;,
   &quot;description&quot;: &quot;Bug description&quot;,
   &quot;severity&quot;: &quot;high&quot;,
   &quot;status&quot;: &quot;OPEN&quot;
 }</code></pre>
-<h3 id="get-api-tasks-overview">GET /api/tasks/overview</h3>
+<h3 id="get-api-tasks-overview" class="endpoint"><span class="method get">GET</span><code>/api/tasks/overview</code></h3>
 <p>Tasks and bugs overview.</p>
 <hr>
 <h2 id="dashboard">Dashboard</h2>
-<h3 id="get-api-dashboard">GET /api/dashboard</h3>
+<h3 id="get-api-dashboard" class="endpoint"><span class="method get">GET</span><code>/api/dashboard</code></h3>
 <p>System overview.</p>
-<h3 id="get-api-dashboard-alerts">GET /api/dashboard/alerts</h3>
+<h3 id="get-api-dashboard-alerts" class="endpoint"><span class="method get">GET</span><code>/api/dashboard/alerts</code></h3>
 <p>System alerts list.</p>
-<h3 id="get-api-dashboard-exchange-rate-fetch">GET /api/dashboard/exchange-rate/fetch</h3>
+<h3 id="get-api-dashboard-exchange-rate-fetch" class="endpoint"><span class="method get">GET</span><code>/api/dashboard/exchange-rate/fetch</code></h3>
 <p>Force exchange rate update.</p>
-<h3 id="get-api-dashboard-charts-income-expense">GET /api/dashboard/charts/income-expense</h3>
+<h3 id="get-api-dashboard-charts-income-expense" class="endpoint"><span class="method get">GET</span><code>/api/dashboard/charts/income-expense</code></h3>
 <p>Income/expense chart.</p>
 <p><strong>Query params:</strong></p>
 <ul>
 <li><code>months</code> - Number of months (default 6)</li>
 </ul>
-<h3 id="get-api-dashboard-charts-project-performance">GET /api/dashboard/charts/project-performance</h3>
+<h3 id="get-api-dashboard-charts-project-performance" class="endpoint"><span class="method get">GET</span><code>/api/dashboard/charts/project-performance</code></h3>
 <p>Project performance.</p>
 <hr>
 <h2 id="chat">Chat</h2>
-<h3 id="get-api-chat-channels">GET /api/chat/channels</h3>
+<h3 id="get-api-chat-channels" class="endpoint"><span class="method get">GET</span><code>/api/chat/channels</code></h3>
 <p>List user&#x27;s channels.</p>
-<h3 id="get-api-chat-channels-id-messages">GET /api/chat/channels/:id/messages</h3>
+<h3 id="get-api-chat-channels-id-messages" class="endpoint"><span class="method get">GET</span><code>/api/chat/channels/:id/messages</code></h3>
 <p>Channel messages.</p>
-<h3 id="post-api-chat-channels-id-messages">POST /api/chat/channels/:id/messages</h3>
+<h3 id="post-api-chat-channels-id-messages" class="endpoint"><span class="method post">POST</span><code>/api/chat/channels/:id/messages</code></h3>
 <p>Send message.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;content&quot;: &quot;Hello team!&quot;
 }</code></pre>
-<h3 id="post-api-chat-private">POST /api/chat/private</h3>
+<h3 id="post-api-chat-private" class="endpoint"><span class="method post">POST</span><code>/api/chat/private</code></h3>
 <p>Create private channel with another user.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;userId&quot;: 2
 }</code></pre>
-<h3 id="websocket-api-chat-ws">WebSocket /api/chat/ws</h3>
+<h3 id="websocket-api-chat-ws" class="endpoint"><span class="method websocket">WebSocket</span><code>/api/chat/ws</code></h3>
 <p>Connect to real-time chat.</p>
 <p><strong>URL:</strong></p>
-<pre><code>ws://host/api/chat/ws?token=&lt;jwt_token&gt;</code></pre>
+<pre><button class="copy" type="button">copy</button><code>ws://host/api/chat/ws?token=&lt;jwt_token&gt;</code></pre>
 <p><strong>Messages (send):</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;type&quot;: &quot;message&quot;,
   &quot;channelId&quot;: 1,
   &quot;content&quot;: &quot;Message&quot;
 }</code></pre>
 <p><strong>Messages (receive):</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;type&quot;: &quot;new_message&quot;,
   &quot;channelId&quot;: 1,
   &quot;message&quot;: { ... }
 }</code></pre>
 <hr>
 <h2 id="settings">Settings</h2>
-<h3 id="get-api-settings-company">GET /api/settings/company</h3>
+<h3 id="get-api-settings-company" class="endpoint"><span class="method get">GET</span><code>/api/settings/company</code></h3>
 <p>Get company configuration.</p>
-<h3 id="put-api-settings-company">PUT /api/settings/company</h3>
+<h3 id="put-api-settings-company" class="endpoint"><span class="method put">PUT</span><code>/api/settings/company</code></h3>
 <p>Update configuration.</p>
 <p><strong>Body:</strong></p>
-<pre><code>{
+<pre><button class="copy" type="button">copy</button><code>{
   &quot;companyName&quot;: &quot;My Company&quot;,
   &quot;companyObjective&quot;: &quot;Manager objective&quot;,
   &quot;companyLogoUrl&quot;: &quot;https://logo.png&quot;
 }</code></pre>
 <hr>
 <h2 id="error-codes">Error Codes</h2>
-<p>| Code | Meaning |</p>
-<p>|------|---------|</p>
-<p>| 400 | Invalid request |</p>
-<p>| 401 | Unauthorized |</p>
-<p>| 403 | Forbidden |</p>
-<p>| 404 | Not found |</p>
-<p>| 500 | Server error |</p></section><section id="06-architecture" class="doc-section"><h1 id="technical-architecture-devfast-manager">Technical Architecture - DevFast Manager</h1>
+<div class="table-wrap"><table><thead><tr><th>Code</th><th>Meaning</th></tr></thead><tbody><tr><td>400</td><td>Invalid request</td></tr><tr><td>401</td><td>Unauthorized</td></tr><tr><td>403</td><td>Forbidden</td></tr><tr><td>404</td><td>Not found</td></tr><tr><td>500</td><td>Server error</td></tr></tbody></table></div></section><section class="doc-section" id="06-architecture"><h1 id="technical-architecture-devfast-manager">Technical Architecture - DevFast Manager</h1>
 <h2 id="overview">Overview</h2>
-<pre><code>┌─────────────────────────────────────────────────────────────┐
+<pre><button class="copy" type="button">copy</button><code>┌─────────────────────────────────────────────────────────────┐
 │                         Frontend                            │
 │              React + Vite + Tailwind + Recharts            │
 └─────────────────────┬───────────────────────────────────────┘
@@ -755,7 +744,7 @@ npx prisma studio</code></pre>
 <li><strong>WebSocket</strong>: @fastify/websocket</li>
 </ul>
 <h3 id="file-structure">File Structure</h3>
-<pre><code>backend/src/
+<pre><button class="copy" type="button">copy</button><code>backend/src/
 ├── index.ts          # Entry point, Fastify configuration
 ├── db.ts             # Prisma client singleton
 ├── routes/           # Controllers/endpoints
@@ -785,7 +774,7 @@ npx prisma studio</code></pre>
 <li><strong>Response</strong> is sent to client</li>
 </ol>
 <h3 id="authentication">Authentication</h3>
-<pre><code>// Authenticate decorator
+<pre><button class="copy" type="button">copy</button><code>// Authenticate decorator
 fastify.decorate(&#x27;authenticate&#x27;, async function(request, reply) {
   try {
     await request.jwtVerify()
@@ -843,7 +832,7 @@ fastify.get(&#x27;/protected-route&#x27;, { preHandler: [fastify.authenticate] }
 <li><strong>Router</strong>: React Router DOM 7</li>
 </ul>
 <h3 id="file-structure">File Structure</h3>
-<pre><code>frontend/src/
+<pre><button class="copy" type="button">copy</button><code>frontend/src/
 ├── App.tsx            # Main router
 ├── main.tsx           # React entry point
 ├── api/
@@ -871,7 +860,7 @@ fastify.get(&#x27;/protected-route&#x27;, { preHandler: [fastify.authenticate] }
 └── utils/
     └── userVisuals.tsx # Avatar, color, initials</code></pre>
 <h3 id="api-client">API Client</h3>
-<pre><code>// API_URL configurable via environment variable
+<pre><button class="copy" type="button">copy</button><code>// API_URL configurable via environment variable
 const API_URL = import.meta.env.VITE_API_URL || &#x27;http://localhost:3001&#x27;
 
 // Class with convenient methods
@@ -890,12 +879,12 @@ class ApiClient {
 </ul>
 <h3 id="dark-mode">Dark Mode</h3>
 <p>Implemented with CSS overrides in <code>index.css</code>:</p>
-<pre><code>.dark body { background: #0f172a; }
+<pre><button class="copy" type="button">copy</button><code>.dark body { background: #0f172a; }
 .dark .bg-white { background-color: #111827 !important; }
 /* etc */</code></pre>
 <p>Toggle in Layout uses <code>document.documentElement.classList.toggle(&#x27;dark&#x27;, value)</code> + localStorage.</p>
-<h3 id="websocket-chat">WebSocket (Chat)</h3>
-<pre><code>// Connection
+<h3 id="websocket-chat" class="endpoint"><span class="method websocket">WebSocket</span><code>(Chat)</code></h3>
+<pre><button class="copy" type="button">copy</button><code>// Connection
 const socket = new WebSocket(`ws://host/api/chat/ws?token=${token}`)
 
 // Events
@@ -912,10 +901,10 @@ socket.onmessage = (event) =&gt; {
 </ul>
 <h3 id="production">Production</h3>
 <p><strong>Backend:</strong></p>
-<pre><code>npm run build  # compile TypeScript
+<pre><button class="copy" type="button">copy</button><code>npm run build  # compile TypeScript
 npm run start  # node dist/index.js</code></pre>
 <p><strong>Frontend:</strong></p>
-<pre><code>npm run build  # generates dist/
+<pre><button class="copy" type="button">copy</button><code>npm run build  # generates dist/
 npm run preview # serves dist/</code></pre>
 <h3 id="environment-variables-for-production">Environment Variables for Production</h3>
 <p><strong>Backend:</strong></p>
@@ -968,4 +957,4 @@ npm run preview # serves dist/</code></pre>
 <li>File upload (currently only URLs)</li>
 <li>More interactive dashboard</li>
 <li>Historical metrics</li>
-</ul></section></div></div></section></main><footer>DevFast Manager · Docs</footer></body></html>
+</ul></section></div></div></section></main><footer>DevFast Manager · Docs</footer><script>document.querySelector('.mobile-doc-select')?.addEventListener('change',e=>location.hash=e.target.value);document.querySelectorAll('.copy').forEach(b=>b.onclick=async()=>{const t=b.nextElementSibling?.innerText||'';try{await navigator.clipboard.writeText(t);b.textContent='copied';setTimeout(()=>b.textContent='copy',900)}catch{}});</script></body></html>
