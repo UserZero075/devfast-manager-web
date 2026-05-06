@@ -1,11 +1,887 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DevFast Manager Docs</title><link rel="stylesheet" href="../style.css"></head><body><div class="lang"><button data-lang="es">ES</button><button data-lang="en">EN</button></div><nav><b><a href="../">DevFast Manager</a> / Docs</b><span><a href="../">Home</a><a href="https://github.com/UserZero075/Business-Management-Dashboard">GitHub</a></span></nav><main><section class="hero"><h1 data-i18n="docsTitle">Documentación</h1><p data-i18n="intro">Guía práctica para instalar, configurar, desplegar y entender DevFast Manager.</p></section><section class="panel"><h2 data-i18n="install">Instalación</h2><pre><code>git clone https://github.com/UserZero075/Business-Management-Dashboard.git
-cd Business-Management-Dashboard/backend
-cp .env.example .env  # si existe; si no, crea backend/.env
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DevFast Manager Docs</title><link rel="stylesheet" href="../style.css"></head><body><div class="bg-parallax"></div><div class="veil"></div><div class="lang"><button data-lang="es">ES</button><button data-lang="en">EN</button></div><nav><a class="brand" href="../">DevFast Manager</a><div><a href="../">Inicio</a><a href="./">Docs</a><a href="https://github.com/UserZero075/Business-Management-Dashboard">GitHub</a></div></nav><main class="docs-shell"><aside class="sidebar"><b>Documentación</b><a href="#01-inicio-rapido">Inicio Rapido</a><a href="#02-guia-usuario">Guia Usuario</a><a href="#03-configuracion">Configuracion</a><a href="#04-desarrollo">Desarrollo</a><a href="#05-api">Api</a><a href="#06-arquitectura">Arquitectura</a></aside><article class="doc"><section id="01-inicio-rapido" class="doc-section"><h1 id="devfast-manager-inicio-r-pido">DevFast Manager - Inicio Rápido</h1>
+<h2 id="requisitos-previos">Requisitos Previos</h2>
+<p class="li">**Node.js** 20.x o superior</p>
+<p class="li">**npm** 9.x o superior</p>
+<h2 id="instalaci-n-en-5-minutos">Instalación en 5 Minutos</h2>
+<h3 id="1-clonar-el-proyecto">1. Clonar el proyecto</h3>
+<pre><code>git clone https://github.com/UserZero075/Business-Management-Dashboard.git
+cd DevFast-Manager</code></pre>
+<h3 id="2-instalar-dependencias">2. Instalar dependencias</h3>
+<pre><code># Backend
+cd backend
 npm install
-npx prisma generate
+
+# Frontend (en otra terminal)
+cd ../frontend
+npm install</code></pre>
+<h3 id="3-configurar-base-de-datos">3. Configurar base de datos</h3>
+<pre><code>cd backend
+npx prisma db push</code></pre>
+<h3 id="4-iniciar-servidores">4. Iniciar servidores</h3>
+<p><strong>Terminal 1 - Backend (puerto 3001):</strong></p>
+<pre><code>cd backend
+npm run dev</code></pre>
+<p><strong>Terminal 2 - Frontend (puerto 5173):</strong></p>
+<pre><code>cd frontend
+npm run dev</code></pre>
+<h3 id="5-acceder">5. Acceder</h3>
+<p>Abre tu navegador en: <strong>http://localhost:5173</strong></p>
+<h2 id="primer-uso">Primer Uso</h2>
+<p>1. En la página de login, haz clic en <strong>&quot;Registrarse&quot;</strong></p>
+<p>2. Ingresa tu email y solicita el código OTP</p>
+<p>3. Revisa tu correo (o la consola del servidor si SMTP no está configurado)</p>
+<p>4. Ingresa el código de 6 dígitos</p>
+<p>5. Completa tu nombre y contraseña</p>
+<p>6. ¡Listo! Ya puedes usar el sistema</p>
+<p>El primer usuario registrado se convierte en <strong>administrador</strong>.</p>
+<h2 id="actualizar-a-producci-n">Actualizar a producción</h2>
+<h3 id="backend">Backend</h3>
+<pre><code>cd backend
+npm run build
+npm run start</code></pre>
+<h3 id="frontend">Frontend</h3>
+<pre><code>cd frontend
+npm run build
+npm run preview</code></pre>
+<h2 id="soluci-n-de-problemas">Solución de Problemas</h2>
+<h3 id="quot-cannot-find-module-quot">&quot;Cannot find module&quot;</h3>
+<p>Vuelve a instalar las dependencias:</p>
+<pre><code>npm install</code></pre>
+<h3 id="error-de-base-de-datos">Error de base de datos</h3>
+<p>Sincroniza el schema de Prisma:</p>
+<pre><code>npx prisma db push</code></pre>
+<h3 id="puerto-ocupado">Puerto ocupado</h3>
+<p>Mata los procesos en los puertos:</p>
+<pre><code>kill $(lsof -t -i :3001)  # Backend
+kill $(lsof -t -i :5173)  # Frontend</code></pre>
+<h2 id="siguiente-paso">Siguiente Paso</h2>
+<p>Ver la [Guía de Usuario](./02-guia-usuario.md) para aprender a usar todas las funciones del sistema.</p></section><section id="02-guia-usuario" class="doc-section"><h1 id="gu-a-de-usuario-devfast-manager">Guía de Usuario - DevFast Manager</h1>
+<h2 id="introducci-n">Introducción</h2>
+<p>DevFast Manager es un sistema integral de gestión que te permite administrar proyectos, infraestructura, finanzas, equipo y tareas desde una sola plataforma.</p>
+<h2 id="navegaci-n">Navegación</h2>
+<p>El menú lateral contiene:</p>
+<p class="li">**Dashboard**: Vista general del sistema</p>
+<p class="li">**Proyectos**: Gestión de proyectos</p>
+<p class="li">**Infraestructura**: VPS, servidores y recursos</p>
+<p class="li">**Finanzas**: Transacciones y métricas</p>
+<p class="li">**Tareas**: Tareas y bugs</p>
+<p class="li">**Equipo**: Miembros del equipo</p>
+<p class="li">**Chat**: Comunicación interna</p>
+<p class="li">**Notificaciones**: Actividad del sistema</p>
+<p class="li">**Mi Perfil**: Configuración personal</p>
+<p class="li">**Empresa**: Configuración de la organización</p>
+<h2 id="funciones-principales">Funciones Principales</h2>
+<h3 id="dashboard">Dashboard</h3>
+<p>Muestra una vista resumida de:</p>
+<p class="li">Ingresos y gastos totales</p>
+<p class="li">Proyectos activos</p>
+<p class="li">Servidores y costos de infraestructura</p>
+<p class="li">Alertas del sistema (VPS sin proyecto, bugs críticos, tareas vencidas)</p>
+<p class="li">Gráfico de tendencias financieras</p>
+<h3 id="proyectos">Proyectos</h3>
+<p><strong>Crear proyecto:</strong></p>
+<p>1. Ve a Proyectos</p>
+<p>2. Haz clic en &quot;Nuevo Proyecto&quot;</p>
+<p>3. Completa: nombre, descripción, estado, URL pública</p>
+<p>4. Asigna miembros y define responsables</p>
+<p><strong>Estados de proyecto:</strong></p>
+<p class="li">ACTIVE: En desarrollo activo</p>
+<p class="li">RENTABLE: Generando ingresos</p>
+<p class="li">PAUSED: En pausa temporal</p>
+<p class="li">ABANDONED: Abandonado</p>
+<p class="li">EXPERIMENTAL: En pruebas</p>
+<h3 id="infraestructura">Infraestructura</h3>
+<p><strong>Servidores VPS:</strong></p>
+<p class="li">Agrega servidores con IP, proveedor, costo mensual</p>
+<p class="li">Vincula cada servidor a uno o más proyectos</p>
+<p class="li">Define el porcentaje de costo que asume cada proyecto</p>
+<p><strong>Items de infraestructura:</strong></p>
+<p class="li">Dominios, certificados SSL, bases de datos, etc.</p>
+<p class="li">Asociación a proyectos similar a los VPS</p>
+<h3 id="finanzas">Finanzas</h3>
+<p><strong>Transacciones:</strong></p>
+<p class="li">Registra ingresos y gastos</p>
+<p class="li">Selecciona la moneda (USD, EUR, CUP, USDT, MLC)</p>
+<p class="li">Asocia a un proyecto específico</p>
+<p><strong>Tasas de cambio:</strong></p>
+<p class="li">Se actualizan automáticamente desde El Toque cada 24h</p>
+<p class="li">También puedes agregarlas manualmente</p>
+<h3 id="tareas-y-bugs">Tareas y Bugs</h3>
+<p><strong>Tareas:</strong></p>
+<p class="li">Crear, editar, eliminar</p>
+<p class="li">Asignar a miembros del equipo</p>
+<p class="li">Definir prioridad (low, medium, high)</p>
+<p class="li">Estados: Pendiente, En Progreso, Completada, Cancelada</p>
+<p><strong>Bugs:</strong></p>
+<p class="li">Reportar bugs con severidad (low, medium, high, critical)</p>
+<p class="li">Estados: Abierto, En Progreso, Resuelto, Cerrado</p>
+<h3 id="equipo">Equipo</h3>
+<p class="li">Ver todos los miembros del equipo</p>
+<p class="li">Cambiar roles (admin, founder, cofounder, developer, etc.)</p>
+<p class="li">Ver proyectos asignados a cada miembro</p>
+<p class="li">Acceder al perfil público de cada usuario</p>
+<h3 id="chat">Chat</h3>
+<p class="li">**Canal Empresa**: Para todos los miembros</p>
+<p class="li">**Canal Cofundadores**: Solo para roles de liderazgo</p>
+<p class="li">**Privados**: Conversaciones entre dos personas</p>
+<p class="li">Mensajes en tiempo real (WebSocket)</p>
+<h3 id="perfil-personal">Perfil Personal</h3>
+<p>Editable en &quot;Mi Perfil&quot;:</p>
+<p class="li">Nombre</p>
+<p class="li">Foto de perfil (URL)</p>
+<p class="li">Color personalizado</p>
+<p class="li">Bio / descripción</p>
+<p class="li">Enlaces: GitHub, Facebook, LinkedIn, Website</p>
+<h2 id="modo-oscuro">Modo Oscuro</h2>
+<p>Haz clic en el icono de sol/luna en el header para alternar entre modo claro y oscuro. La preferencia se guarda en tu navegador.</p>
+<h2 id="configuraci-n-de-empresa">Configuración de Empresa</h2>
+<p>En la sección &quot;Empresa&quot; (solo administradores):</p>
+<p class="li">Nombre de la empresa/organización</p>
+<p class="li">Objetivo del manager</p>
+<p class="li">Logo (URL)</p>
+<p>Esta configuración aparece en el login, header y throughout la aplicación.</p>
+<h2 id="tips">Tips</h2>
+<p>1. <strong>Usa las alertas</strong>: El dashboard muestra advertencias importantes</p>
+<p>2. <strong>Registra transacciones</strong>: Mantén el control financiero actualizado</p>
+<p>3. <strong>Vincula recursos</strong>: Asocia VPS e infraestructura a proyectos para ver costos reales</p>
+<p>4. <strong>Actualiza métricas</strong>: Registra usuarios de cada proyecto regularmente</p>
+<p>5. <strong>Revisa notificaciones</strong>: Mantente al día con la actividad del equipo</p></section><section id="03-configuracion" class="doc-section"><h1 id="configuraci-n-devfast-manager">Configuración - DevFast Manager</h1>
+<h2 id="variables-de-entorno">Variables de Entorno</h2>
+<p>El archivo <code>.env</code> en la carpeta <code>backend/</code> contiene la configuración del sistema.</p>
+<h3 id="base-de-datos">Base de Datos</h3>
+<pre><code># SQLite (por defecto)
+DATABASE_URL=&quot;file:./devfast.db&quot;
+
+# MySQL
+DATABASE_URL=&quot;mysql://user:password@localhost:3306/devfast&quot;
+
+# PostgreSQL
+DATABASE_URL=&quot;postgresql://user:password@localhost:5432/devfast&quot;</code></pre>
+<h3 id="servidor">Servidor</h3>
+<pre><code># Puerto donde escuchará el backend
+PORT=3001
+
+# Host (0.0.0.0 para todas las interfaces)
+HOST=0.0.0.0
+
+# Clave secreta para JWT (cambia en producción!)
+JWT_SECRET=&quot;tu-clave-secreta-muy-larga-y-segura&quot;</code></pre>
+<h3 id="tasas-de-cambio">Tasas de Cambio</h3>
+<pre><code># URL de El Toque para obtener tasas (opcional)
+EL_TOQUE_URL=&quot;https://eltoque.com/tasas-de-cambio-de-moneda-en-cuba-hoy&quot;</code></pre>
+<h3 id="correo-smtp-para-otp">Correo SMTP (para OTP)</h3>
+<pre><code># Servidor SMTP
+SMTP_HOST=&quot;smtp.gmail.com&quot;
+SMTP_PORT=587
+SMTP_USER=&quot;tu-email@gmail.com&quot;
+SMTP_PASS=&quot;tu-app-password&quot;
+SMTP_FROM=&quot;tu-email@gmail.com&quot;
+
+# true para puerto 465, false para 587/25
+SMTP_SECURE=false</code></pre>
+<h3 id="entorno">Entorno</h3>
+<pre><code># development o production
+NODE_ENV=development</code></pre>
+<h2 id="configurar-url-del-frontend">Configurar URL del Frontend</h2>
+<p>El frontend necesita saber dónde está el backend:</p>
+<pre><code># Desarrollo
+VITE_API_URL=http://localhost:3001 npm run dev
+
+# Producción con IP específica
+VITE_API_URL=http://100.x.x.x:3001 npm run build</code></pre>
+<p>O edita directamente en <code>frontend/src/api/client.ts</code>:</p>
+<pre><code>const API_URL = import.meta.env.VITE_API_URL || &#x27;http://localhost:3001&#x27;;</code></pre>
+<h2 id="despliegue-en-vps">Despliegue en VPS</h2>
+<h3 id="script-autom-tico">Script Automático</h3>
+<pre><code>chmod +x deploy.sh
+./deploy.sh</code></pre>
+<p>El script:</p>
+<p>1. Detecta el sistema operativo</p>
+<p>2. Instala Node.js si no existe</p>
+<p>3. Instala dependencias</p>
+<p>4. Compila proyecto</p>
+<p>5. Configura base de datos</p>
+<p>6. Pregunta si iniciar en background</p>
+<h3 id="manual">Manual</h3>
+<pre><code># Backend
+cd backend
+npm install
 npx prisma db push
+npm run build
+HOST=0.0.0.0 PORT=3001 npm run start
+
+# Frontend (en otra terminal)
+cd frontend
+npm install
+VITE_API_URL=http://TU_IP:3001 npm run build
+npm run preview -- --host --port 80</code></pre>
+<h2 id="cambiar-nombre-de-empresa">Cambiar Nombre de Empresa</h2>
+<p>1. Ve a la sección <strong>Empresa</strong> en el menú</p>
+<p>2. Edita el nombre, objetivo y logo</p>
+<p>3. Los cambios se aplican inmediatamente</p>
+<h2 id="configurar-tareas-programadas">Configurar Tareas Programadas</h2>
+<p>El sistema actualiza tasas de cambio automáticamente cada 24 horas al iniciar el servidor. No requiere configuración adicional.</p>
+<h2 id="seguridad">Seguridad</h2>
+<p>1. <strong>JWT_SECRET</strong>: Cambia la clave por defecto</p>
+<p>2. <strong>SMTP</strong>: Usa una contraseña de aplicación (no tu contraseña real de Gmail)</p>
+<p>3. <strong>Firewall</strong>: Si usas VPS, configura reglas de firewall para limitar acceso</p>
+<h2 id="puertos-comunes">Puertos Comunes</h2>
+<p>| Servicio | Puerto | Descripción |</p>
+<p>|----------|--------|-------------|</p>
+<p>| Backend API | 3001 | API REST |</p>
+<p>| Frontend Dev | 5173 | Servidor desarrollo |</p>
+<p>| Frontend Prod | 4173 | Servidor preview |</p>
+<p>| Nginx (custom) | 80 | Producción con nginx |</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="error-de-conexi-n-a-base-de-datos">Error de conexión a base de datos</h3>
+<pre><code>npx prisma db push</code></pre>
+<h3 id="puerto-ocupado">Puerto ocupado</h3>
+<pre><code>lsof -i :3001
+kill -9 PID</code></pre>
+<h3 id="cors-error">CORS error</h3>
+<p>Asegúrate de que el backend está escuchando en <code>0.0.0.0</code> y que el frontend tiene la URL correcta en <code>VITE_API_URL</code>.</p>
+<h3 id="otp-no-llega-al-correo">OTP no llega al correo</h3>
+<p>Verifica la configuración SMTP. El código también se muestra en la consola del servidor si <code>NODE_ENV=development</code>.</p></section><section id="04-desarrollo" class="doc-section"><h1 id="gu-a-de-desarrollo-devfast-manager">Guía de Desarrollo - DevFast Manager</h1>
+<h2 id="estructura-del-proyecto">Estructura del Proyecto</h2>
+<pre><code>DevFast Manager/
+├── backend/
+│   ├── src/
+│   │   ├── routes/        # Endpoints de API
+│   │   │   ├── auth.ts    # Autenticación y usuarios
+│   │   │   ├── projects.ts # Gestión de proyectos
+│   │   │   ├── vps.ts     # Infraestructura
+│   │   │   ├── finance.ts # Transacciones
+│   │   │   ├── tasks.ts   # Tareas y bugs
+│   │   │   ├── dashboard.ts # Dashboard y métricas
+│   │   │   ├── chat.ts    # Chat interno
+│   │   │   ├── activity.ts # Registro de actividad
+│   │   │   └── settings.ts # Configuración empresa
+│   │   ├── services/      # Lógica de negocio
+│   │   │   ├── bootstrap.ts # Roles y settings base
+│   │   │   ├── email.ts   # Envío de correos
+│   │   │   ├── exchangeRates.ts # Tasas de cambio
+│   │   │   └── activity.ts # Logging
+│   │   ├── db.ts          # Cliente Prisma
+│   │   ├── index.ts       # Servidor Fastify
+│   │   └── types/         # Tipos TypeScript
+│   ├── prisma/
+│   │   └── schema.prisma  # Modelo de datos
+│   └── package.json
+│
+├── frontend/
+│   ├── src/
+│   │   ├── api/
+│   │   │   └── client.ts  # Cliente HTTP
+│   │   ├── components/
+│   │   │   └── Layout.tsx # Layout principal
+│   │   ├── pages/         # Páginas React
+│   │   ├── hooks/         # Hooks personalizados
+│   │   │   ├── useAuth.tsx  # Autenticación
+│   │   │   ├── useData.tsx  # React Query
+│   │   │   └── useCompany.tsx # Datos empresa
+│   │   └── utils/
+│   │       └── userVisuals.tsx # Avatares y colores
+│   └── package.json
+│
+└── Documentation/
+    ├── es/  # Documentación en español
+    └── en/  # Documentación en inglés</code></pre>
+<h2 id="comandos-de-desarrollo">Comandos de Desarrollo</h2>
+<h3 id="backend">Backend</h3>
+<pre><code>cd backend
+
+# Desarrollo con hot-reload
 npm run dev
 
-cd ../frontend
-npm install
-VITE_API_URL=http://localhost:3001 npm run dev</code></pre></section><section><h2 data-i18n="env">Variables principales</h2><div class="grid"><article><h3>DATABASE_URL</h3><p>SQLite: file:./devfast.db. Puede migrarse a MySQL/PostgreSQL cambiando Prisma.</p></article><article><h3>JWT_SECRET</h3><p data-i18n="jwt">Secreto fuerte para firmar sesiones.</p></article><article><h3>SMTP_*</h3><p data-i18n="smtp">Servidor de correo para OTP de registro.</p></article><article><h3>VITE_API_URL</h3><p data-i18n="vite">URL pública del backend usada por el frontend.</p></article></div></section><section><h2 data-i18n="deploy">Despliegue</h2><p data-i18n="deployText">En VPS puedes usar deploy.sh: sube el proyecto o un tar.gz, ejecuta chmod +x deploy.sh && ./deploy.sh. Revisa puertos, firewall, variables de entorno y proxy inverso antes de producción.</p></section><section><h2>API</h2><p data-i18n="apiText">El backend expone rutas REST bajo /api para auth, projects, vps, finance, tasks, dashboard, team, chat y reports. El README del repo lista los endpoints principales.</p></section><section><h2 data-i18n="architecture">Arquitectura</h2><p data-i18n="archText">Frontend React/Vite consume una API Fastify TypeScript. Prisma gestiona el modelo de datos. WebSocket se usa para chat con fallback HTTP.</p></section></main><script src="../i18n.js"></script><script>Object.assign(t.es,{docsTitle:'Documentación',intro:'Guía práctica para instalar, configurar, desplegar y entender DevFast Manager.',install:'Instalación',env:'Variables principales',jwt:'Secreto fuerte para firmar sesiones.',smtp:'Servidor de correo para OTP de registro.',vite:'URL pública del backend usada por el frontend.',deploy:'Despliegue',deployText:'En VPS puedes usar deploy.sh: sube el proyecto o un tar.gz, ejecuta chmod +x deploy.sh && ./deploy.sh. Revisa puertos, firewall, variables de entorno y proxy inverso antes de producción.',apiText:'El backend expone rutas REST bajo /api para auth, projects, vps, finance, tasks, dashboard, team, chat y reports. El README del repo lista los endpoints principales.',architecture:'Arquitectura',archText:'Frontend React/Vite consume una API Fastify TypeScript. Prisma gestiona el modelo de datos. WebSocket se usa para chat con fallback HTTP.'});Object.assign(t.en,{docsTitle:'Documentation',intro:'Practical guide to install, configure, deploy and understand DevFast Manager.',install:'Installation',env:'Main environment variables',jwt:'Strong secret used to sign sessions.',smtp:'Mail server for registration OTP.',vite:'Public backend URL used by the frontend.',deploy:'Deployment',deployText:'On a VPS you can use deploy.sh: upload the project or a tar.gz, run chmod +x deploy.sh && ./deploy.sh. Check ports, firewall, env vars and reverse proxy before production.',apiText:'The backend exposes REST routes under /api for auth, projects, vps, finance, tasks, dashboard, team, chat and reports. The repo README lists the main endpoints.',architecture:'Architecture',archText:'React/Vite frontend consumes a Fastify TypeScript API. Prisma manages the data model. WebSocket powers chat with HTTP fallback.'});setLang(localStorage.devfast_lang||'es')</script></body></html>
+# Compilar TypeScript
+npm run build
+
+# Iniciar producción
+npm run start
+
+# Generar cliente Prisma
+npx prisma generate
+
+# Sincronizar base de datos
+npx prisma db push</code></pre>
+<h3 id="frontend">Frontend</h3>
+<pre><code>cd frontend
+
+# Desarrollo
+npm run dev
+
+# Build producción
+npm run build
+
+# Preview producción
+npm run preview</code></pre>
+<h2 id="agregar-nueva-ruta-api">Agregar Nueva Ruta API</h2>
+<p>1. Crea el archivo en <code>backend/src/routes/</code></p>
+<p>2. Registra en <code>backend/src/index.ts</code>:</p>
+<pre><code>import nuevaRuta from &#x27;./routes/nuevaRuta.js&#x27;
+
+await fastify.register(nuevaRuta, { prefix: &#x27;/api/nueva&#x27; })</code></pre>
+<h2 id="agregar-nueva-p-gina-frontend">Agregar Nueva Página Frontend</h2>
+<p>1. Crea el componente en <code>frontend/src/pages/</code></p>
+<p>2. Registra la ruta en <code>frontend/src/App.tsx</code>:</p>
+<pre><code>import NuevaPagina from &#x27;./pages/NuevaPagina&#x27;
+
+&lt;Route path=&quot;/nueva&quot; element={&lt;NuevaPagina /&gt;} /&gt;</code></pre>
+<h2 id="base-de-datos">Base de Datos</h2>
+<h3 id="schema-prisma">Schema Prisma</h3>
+<p>Edita <code>backend/prisma/schema.prisma</code> para modificar modelos:</p>
+<pre><code>model NuevoModelo {
+  id        Int      @id @default(autoincrement())
+  campo     String
+  relacion  Relacion @relation(...)
+}</code></pre>
+<p>Luego:</p>
+<pre><code>npx prisma db push
+npx prisma generate</code></pre>
+<h3 id="consultas-prisma">Consultas Prisma</h3>
+<pre><code>// Encontrar uno
+const user = await prisma.user.findUnique({ where: { id: 1 } })
+
+// Crear
+const nuevo = await prisma.user.create({
+  data: { name: &#x27;Nuevo&#x27;, email: &#x27;...&#x27; }
+})
+
+// Actualizar
+await prisma.user.update({
+  where: { id: 1 },
+  data: { name: &#x27;Actualizado&#x27; }
+})
+
+// Eliminar
+await prisma.user.delete({ where: { id: 1 } })</code></pre>
+<h2 id="estilos">Estilos</h2>
+<p>El frontend usa Tailwind CSS. Las clases de modo oscuro se configuran en <code>frontend/src/index.css</code>.</p>
+<h3 id="colores-del-sistema">Colores del Sistema</h3>
+<pre><code>/* Modo claro */
+.bg-gray-50
+.bg-white
+.text-gray-800
+
+/* Modo oscuro (override) */
+.dark .bg-gray-50 { background-color: #0f172a; }
+.dark .text-gray-800 { color: #e5e7eb; }</code></pre>
+<h2 id="testing">Testing</h2>
+<pre><code># Backend - verificar compilación
+npm run build
+
+# Frontend - verificar build
+cd frontend
+npm run build
+
+# Linting
+npm run lint</code></pre>
+<h2 id="agregar-dependencia">Agregar Dependencia</h2>
+<h3 id="backend">Backend</h3>
+<pre><code>cd backend
+npm install nombre-paquete</code></pre>
+<h3 id="frontend">Frontend</h3>
+<pre><code>cd frontend
+npm install nombre-paquete</code></pre>
+<h2 id="variables-de-entorno-para-desarrollo">Variables de Entorno para Desarrollo</h2>
+<pre><code># Backend
+DATABASE_URL=&quot;file:./devfast.db&quot;
+JWT_SECRET=&quot;dev-secret&quot;
+PORT=3001
+
+# Frontend
+VITE_API_URL=http://localhost:3001</code></pre>
+<h2 id="debugging">Debugging</h2>
+<h3 id="ver-logs-del-servidor">Ver logs del servidor</h3>
+<p>Los logs de Fastify aparecen en la terminal. Para más detalle, el nivel de log puede modificarse en <code>backend/src/index.ts</code>.</p>
+<h3 id="inspecturar-red">Inspecturar red</h3>
+<p>Usa las herramientas de desarrollo del navegador (F12 &gt; Network) para ver las peticiones API.</p>
+<h3 id="base-de-datos">Base de datos</h3>
+<pre><code># Abrir shell de Prisma
+npx prisma studio</code></pre>
+<h2 id="convenciones-de-c-digo">Convenciones de Código</h2>
+<p class="li">TypeScript strict mode</p>
+<p class="li">Nombres de archivos en kebab-case (projects.ts, user-profile.tsx)</p>
+<p class="li">Componentes React en PascalCase (ProjectManager.tsx)</p>
+<p class="li">Hooks con prefijo &quot;use&quot; (useAuth.tsx)</p>
+<p class="li">Rutas API en kebab-case (/api/my-resource)</p></section><section id="05-api" class="doc-section"><h1 id="documentaci-n-de-api-devfast-manager">Documentación de API - DevFast Manager</h1>
+<h2 id="autenticaci-n">Autenticación</h2>
+<h3 id="post-api-auth-request-otp">POST /api/auth/request-otp</h3>
+<p>Solicita un código OTP para registro.</p>
+<p><strong>Body:</strong></p>
+<pre><code>{
+  &quot;email&quot;: &quot;usuario@ejemplo.com&quot;
+}</code></pre>
+<p><strong>Respuesta:</strong></p>
+<pre><code>{
+  &quot;success&quot;: true,
+  &quot;expiresAt&quot;: &quot;2024-01-01T12:00:00.000Z&quot;,
+  &quot;devCode&quot;: &quot;123456&quot;  // Solo en desarrollo
+}</code></pre>
+<p>---</p>
+<h3 id="post-api-auth-register">POST /api/auth/register</h3>
+<p>Registra un nuevo usuario.</p>
+<p><strong>Body:</strong></p>
+<pre><code>{
+  &quot;email&quot;: &quot;usuario@ejemplo.com&quot;,
+  &quot;password&quot;: &quot;contraseña123&quot;,
+  &quot;name&quot;: &quot;Nombre Usuario&quot;,
+  &quot;otp&quot;: &quot;123456&quot;
+}</code></pre>
+<p><strong>Respuesta:</strong></p>
+<pre><code>{
+  &quot;user&quot;: {
+    &quot;id&quot;: 1,
+    &quot;email&quot;: &quot;...&quot;,
+    &quot;name&quot;: &quot;...&quot;,
+    &quot;role&quot;: &quot;member&quot;,
+    &quot;avatar&quot;: null,
+    &quot;color&quot;: &quot;#7C9CBF&quot;,
+    &quot;bio&quot;: null,
+    &quot;githubUrl&quot;: null,
+    &quot;facebookUrl&quot;: null,
+    &quot;linkedinUrl&quot;: null,
+    &quot;websiteUrl&quot;: null
+  },
+  &quot;token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...&quot;
+}</code></pre>
+<p>---</p>
+<h3 id="post-api-auth-login">POST /api/auth/login</h3>
+<p>Inicia sesión.</p>
+<p><strong>Body:</strong></p>
+<pre><code>{
+  &quot;email&quot;: &quot;usuario@ejemplo.com&quot;,
+  &quot;password&quot;: &quot;contraseña123&quot;
+}</code></pre>
+<p><strong>Respuesta:</strong> Mismo formato que register.</p>
+<p>---</p>
+<h3 id="get-api-auth-me">GET /api/auth/me</h3>
+<p>Obtiene el usuario actual (requiere autenticación).</p>
+<p><strong>Headers:</strong></p>
+<pre><code>Authorization: Bearer &lt;token&gt;</code></pre>
+<p>---</p>
+<h3 id="put-api-auth-me">PUT /api/auth/me</h3>
+<p>Actualiza el perfil del usuario actual.</p>
+<p><strong>Body:</strong></p>
+<pre><code>{
+  &quot;name&quot;: &quot;Nuevo Nombre&quot;,
+  &quot;bio&quot;: &quot;Mi bio&quot;,
+  &quot;avatar&quot;: &quot;https://...&quot;,
+  &quot;color&quot;: &quot;#FF5733&quot;,
+  &quot;githubUrl&quot;: &quot;https://github.com/user&quot;,
+  &quot;facebookUrl&quot;: &quot;https://facebook.com/user&quot;,
+  &quot;linkedinUrl&quot;: &quot;https://linkedin.com/in/user&quot;,
+  &quot;websiteUrl&quot;: &quot;https://miweb.com&quot;
+}</code></pre>
+<p>---</p>
+<h3 id="get-api-auth-users">GET /api/auth/users</h3>
+<p>Lista todos los usuarios (requiere autenticación).</p>
+<p>---</p>
+<h3 id="get-api-auth-users-id">GET /api/auth/users/:id</h3>
+<p>Obtiene perfil público de un usuario.</p>
+<p>---</p>
+<h3 id="get-api-auth-roles">GET /api/auth/roles</h3>
+<p>Lista todos los roles disponibles.</p>
+<p>---</p>
+<h3 id="put-api-auth-users-id-role">PUT /api/auth/users/:id/role</h3>
+<p>Cambia el rol de un usuario.</p>
+<p><strong>Body:</strong></p>
+<pre><code>{
+  &quot;roleId&quot;: 2
+}</code></pre>
+<p>---</p>
+<h2 id="proyectos">Proyectos</h2>
+<h3 id="get-api-projects">GET /api/projects</h3>
+<p>Lista todos los proyectos.</p>
+<h3 id="get-api-projects-id">GET /api/projects/:id</h3>
+<p>Obtiene un proyecto específico con todos sus datos.</p>
+<h3 id="post-api-projects">POST /api/projects</h3>
+<p>Crea un nuevo proyecto.</p>
+<p><strong>Body:</strong></p>
+<pre><code>{
+  &quot;name&quot;: &quot;Mi Proyecto&quot;,
+  &quot;description&quot;: &quot;Descripción&quot;,
+  &quot;status&quot;: &quot;ACTIVE&quot;,
+  &quot;publicUrl&quot;: &quot;https://mi-proyecto.com&quot;
+}</code></pre>
+<h3 id="put-api-projects-id">PUT /api/projects/:id</h3>
+<p>Actualiza un proyecto.</p>
+<h3 id="delete-api-projects-id">DELETE /api/projects/:id</h3>
+<p>Elimina un proyecto.</p>
+<h3 id="post-api-projects-id-metrics">POST /api/projects/:id/metrics</h3>
+<p>Agrega métricas de usuarios.</p>
+<p><strong>Body:</strong></p>
+<pre><code>{
+  &quot;totalUsers&quot;: 100,
+  &quot;activeUsers&quot;: 50,
+  &quot;paidUsers&quot;: 20,
+  &quot;referralUsers&quot;: 10,
+  &quot;freeUsers&quot;: 70,
+  &quot;collaborationUsers&quot;: 5
+}</code></pre>
+<p>---</p>
+<h2 id="infraestructura">Infraestructura</h2>
+<h3 id="get-api-vps-providers">GET /api/vps/providers</h3>
+<p>Lista proveedores.</p>
+<h3 id="post-api-vps-providers">POST /api/vps/providers</h3>
+<p>Crea proveedor.</p>
+<h3 id="get-api-vps-servers">GET /api/vps/servers</h3>
+<p>Lista servidores VPS.</p>
+<h3 id="post-api-vps-servers">POST /api/vps/servers</h3>
+<p>Crea servidor VPS.</p>
+<h3 id="post-api-vps-servers-id-link">POST /api/vps/servers/:id/link</h3>
+<p>Vincula servidor a proyecto.</p>
+<p><strong>Body:</strong></p>
+<pre><code>{
+  &quot;projectId&quot;: 1,
+  &quot;costShare&quot;: 50
+}</code></pre>
+<h3 id="get-api-vps-items">GET /api/vps/items</h3>
+<p>Lista items de infraestructura.</p>
+<h3 id="post-api-vps-items">POST /api/vps/items</h3>
+<p>Crea item.</p>
+<h3 id="get-api-vps-costs">GET /api/vps/costs</h3>
+<p>Resumen de costos mensuales.</p>
+<p>---</p>
+<h2 id="finanzas">Finanzas</h2>
+<h3 id="get-api-finance-transactions">GET /api/finance/transactions</h3>
+<p>Lista transacciones.</p>
+<p><strong>Query params:</strong></p>
+<p class="li">`projectId` - Filtrar por proyecto</p>
+<p class="li">`type` - INCOME o EXPENSE</p>
+<p class="li">`startDate` - Fecha inicio</p>
+<p class="li">`endDate` - Fecha fin</p>
+<h3 id="post-api-finance-transactions">POST /api/finance/transactions</h3>
+<p>Crea transacción.</p>
+<p><strong>Body:</strong></p>
+<pre><code>{
+  &quot;projectId&quot;: 1,
+  &quot;type&quot;: &quot;INCOME&quot;,
+  &quot;amount&quot;: 100.00,
+  &quot;currency&quot;: &quot;USD&quot;,
+  &quot;description&quot;: &quot;Pago de cliente&quot;,
+  &quot;date&quot;: &quot;2024-01-15&quot;
+}</code></pre>
+<h3 id="get-api-finance-summary">GET /api/finance/summary</h3>
+<p>Resumen financiero general.</p>
+<h3 id="get-api-finance-rates-latest">GET /api/finance/rates/latest</h3>
+<p>Tasas de cambio actuales.</p>
+<h3 id="post-api-finance-rates">POST /api/finance/rates</h3>
+<p>Agregar tasa manualmente.</p>
+<p><strong>Body:</strong></p>
+<pre><code>{
+  &quot;code&quot;: &quot;EUR&quot;,
+  &quot;rate&quot;: 0.85,
+  &quot;source&quot;: &quot;manual&quot;
+}</code></pre>
+<p>---</p>
+<h2 id="tareas-y-bugs">Tareas y Bugs</h2>
+<h3 id="get-api-tasks-tasks">GET /api/tasks/tasks</h3>
+<p>Lista tareas.</p>
+<p><strong>Query params:</strong></p>
+<p class="li">`projectId`</p>
+<p class="li">`status`</p>
+<p class="li">`assigneeId`</p>
+<h3 id="post-api-tasks-tasks">POST /api/tasks/tasks</h3>
+<p>Crea tarea.</p>
+<p><strong>Body:</strong></p>
+<pre><code>{
+  &quot;projectId&quot;: 1,
+  &quot;title&quot;: &quot;Nueva tarea&quot;,
+  &quot;description&quot;: &quot;Descripción&quot;,
+  &quot;priority&quot;: &quot;medium&quot;,
+  &quot;status&quot;: &quot;PENDING&quot;,
+  &quot;assigneeId&quot;: 1,
+  &quot;dueDate&quot;: &quot;2024-01-20&quot;
+}</code></pre>
+<h3 id="get-api-tasks-bugs">GET /api/tasks/bugs</h3>
+<p>Lista bugs.</p>
+<h3 id="post-api-tasks-bugs">POST /api/tasks/bugs</h3>
+<p>Reporta bug.</p>
+<p><strong>Body:</strong></p>
+<pre><code>{
+  &quot;projectId&quot;: 1,
+  &quot;title&quot;: &quot;Bug encontrado&quot;,
+  &quot;description&quot;: &quot;Descripción del bug&quot;,
+  &quot;severity&quot;: &quot;high&quot;,
+  &quot;status&quot;: &quot;OPEN&quot;
+}</code></pre>
+<h3 id="get-api-tasks-overview">GET /api/tasks/overview</h3>
+<p>Resumen de tareas y bugs.</p>
+<p>---</p>
+<h2 id="dashboard">Dashboard</h2>
+<h3 id="get-api-dashboard">GET /api/dashboard</h3>
+<p>Overview general del sistema.</p>
+<h3 id="get-api-dashboard-alerts">GET /api/dashboard/alerts</h3>
+<p>Lista de alertas del sistema.</p>
+<h3 id="get-api-dashboard-exchange-rate-fetch">GET /api/dashboard/exchange-rate/fetch</h3>
+<p>Fuerza actualización de tasas de cambio.</p>
+<h3 id="get-api-dashboard-charts-income-expense">GET /api/dashboard/charts/income-expense</h3>
+<p>Gráfico de ingresos/gastos.</p>
+<p><strong>Query params:</strong></p>
+<p class="li">`months` - Número de meses (default 6)</p>
+<h3 id="get-api-dashboard-charts-project-performance">GET /api/dashboard/charts/project-performance</h3>
+<p>Rendimiento de proyectos.</p>
+<p>---</p>
+<h2 id="chat">Chat</h2>
+<h3 id="get-api-chat-channels">GET /api/chat/channels</h3>
+<p>Lista canales del usuario.</p>
+<h3 id="get-api-chat-channels-id-messages">GET /api/chat/channels/:id/messages</h3>
+<p>Mensajes de un canal.</p>
+<h3 id="post-api-chat-channels-id-messages">POST /api/chat/channels/:id/messages</h3>
+<p>Envía mensaje.</p>
+<p><strong>Body:</strong></p>
+<pre><code>{
+  &quot;content&quot;: &quot;Hola equipo!&quot;
+}</code></pre>
+<h3 id="post-api-chat-private">POST /api/chat/private</h3>
+<p>Crea canal privado con otro usuario.</p>
+<p><strong>Body:</strong></p>
+<pre><code>{
+  &quot;userId&quot;: 2
+}</code></pre>
+<h3 id="websocket-api-chat-ws">WebSocket /api/chat/ws</h3>
+<p>Conectar al chat en tiempo real.</p>
+<p><strong>URL:</strong></p>
+<pre><code>ws://host/api/chat/ws?token=&lt;jwt_token&gt;</code></pre>
+<p><strong>Mensajes (enviar):</strong></p>
+<pre><code>{
+  &quot;type&quot;: &quot;message&quot;,
+  &quot;channelId&quot;: 1,
+  &quot;content&quot;: &quot;Mensaje&quot;
+}</code></pre>
+<p><strong>Mensajes (recibir):</strong></p>
+<pre><code>{
+  &quot;type&quot;: &quot;new_message&quot;,
+  &quot;channelId&quot;: 1,
+  &quot;message&quot;: { ... }
+}</code></pre>
+<p>---</p>
+<h2 id="configuraci-n">Configuración</h2>
+<h3 id="get-api-settings-company">GET /api/settings/company</h3>
+<p>Obtiene configuración de la empresa.</p>
+<h3 id="put-api-settings-company">PUT /api/settings/company</h3>
+<p>Actualiza configuración.</p>
+<p><strong>Body:</strong></p>
+<pre><code>{
+  &quot;companyName&quot;: &quot;Mi Empresa&quot;,
+  &quot;companyObjective&quot;: &quot;Objetivo del manager&quot;,
+  &quot;companyLogoUrl&quot;: &quot;https://logo.png&quot;
+}</code></pre>
+<p>---</p>
+<h2 id="c-digos-de-error">Códigos de Error</h2>
+<p>| Código | Significado |</p>
+<p>|--------|-------------|</p>
+<p>| 400 | Solicitud inválida |</p>
+<p>| 401 | No autorizado |</p>
+<p>| 403 | Prohibido |</p>
+<p>| 404 | No encontrado |</p>
+<p>| 500 | Error del servidor |</p></section><section id="06-arquitectura" class="doc-section"><h1 id="arquitectura-t-cnica-devfast-manager">Arquitectura Técnica - DevFast Manager</h1>
+<h2 id="visi-n-general">Visión General</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│                         Frontend                            │
+│              React + Vite + Tailwind + Recharts            │
+└─────────────────────┬───────────────────────────────────────┘
+                      │ HTTP / WebSocket
+┌─────────────────────▼───────────────────────────────────────┐
+│                         Backend                             │
+│           Fastify + TypeScript + Prisma + JWT              │
+└─────────────────────┬───────────────────────────────────────┘
+                      │
+┌─────────────────────▼───────────────────────────────────────┐
+│                    Base de Datos                            │
+│                    SQLite / MySQL / PostgreSQL              │
+└─────────────────────────────────────────────────────────────┘</code></pre>
+<h2 id="backend">Backend</h2>
+<h3 id="stack-tecnol-gico">Stack Tecnológico</h3>
+<p class="li">**Runtime**: Node.js 20.x</p>
+<p class="li">**Framework**: Fastify 4.x</p>
+<p class="li">**Lenguaje**: TypeScript strict</p>
+<p class="li">**ORM**: Prisma 5.x</p>
+<p class="li">**Auth**: JWT + bcrypt</p>
+<p class="li">**WebSocket**: @fastify/websocket</p>
+<h3 id="estructura-de-archivos">Estructura de Archivos</h3>
+<pre><code>backend/src/
+├── index.ts          # Entry point, configuración de Fastify
+├── db.ts             # Cliente Prisma singleton
+├── routes/           # Controladores/endpoints
+│   ├── auth.ts       # Autenticación, usuarios, roles
+│   ├── projects.ts   # CRUD proyectos
+│   ├── vps.ts        # Infraestructura VPS
+│   ├── finance.ts    # Transacciones financieras
+│   ├── tasks.ts      # Tareas y bugs
+│   ├── dashboard.ts  # Métricas y alertas
+│   ├── chat.ts       # Chat WebSocket y HTTP
+│   ├── activity.ts   # Registro de actividad
+│   └── settings.ts   # Configuración empresa
+├── services/         # Lógica de negocio
+│   ├── bootstrap.ts  # Roles y settings iniciales
+│   ├── email.ts      # Envío SMTP
+│   ├── exchangeRates.ts # Fetch de tasas El Toque
+│   └── activity.ts   # Helper de logging
+└── types/            # TypeScript declarations
+    └── fastify.d.ts  # Extensiones de tipos Fastify</code></pre>
+<h3 id="flujo-de-una-solicitud">Flujo de una Solicitud</h3>
+<p>1. <strong>Solicitud HTTP</strong> llega a Fastify</p>
+<p>2. <strong>CORS</strong> se valida (plugin @fastify/cors)</p>
+<p>3. <strong>JWT</strong> se verifica (si endpoint autenticado)</p>
+<p>4. <strong>Route handler</strong> ejecuta validación Zod</p>
+<p>5. <strong>Servicio</strong> procesa lógica (Prisma)</p>
+<p>6. <strong>Respuesta</strong> se envía al cliente</p>
+<h3 id="autenticaci-n">Autenticación</h3>
+<pre><code>// Decorador authenticate
+fastify.decorate(&#x27;authenticate&#x27;, async function(request, reply) {
+  try {
+    await request.jwtVerify()
+  } catch (err) {
+    reply.status(401).send({ error: &#x27;Unauthorized&#x27; })
+  }
+})
+
+// Uso en rutas
+fastify.get(&#x27;/ruta-protegida&#x27;, { preHandler: [fastify.authenticate] }, handler)</code></pre>
+<h3 id="base-de-datos">Base de Datos</h3>
+<p><strong>Modelos principales:</strong></p>
+<p class="li">**User**: Usuarios del sistema</p>
+<p class="li">**Role**: Roles (admin, member, etc.)</p>
+<p class="li">**Project**: Proyectos</p>
+<p class="li">**ProjectMember**: Relación usuario-proyecto</p>
+<p class="li">**VpsServer**: Servidores VPS</p>
+<p class="li">**InfrastructureItem**: Recursos de infraestructura</p>
+<p class="li">**FinancialTransaction**: Transacciones financieras</p>
+<p class="li">**Task / Bug**: Tareas y bugs</p>
+<p class="li">**ChatChannel / ChatMessage**: Chat interno</p>
+<p class="li">**ActivityLog**: Registro de actividad</p>
+<p class="li">**Settings**: Configuración clave-valor</p>
+<p class="li">**EmailOtp**: Códigos OTP</p>
+<h3 id="servicios">Servicios</h3>
+<p><strong>bootstrap.ts</strong>: Se ejecuta al iniciar el servidor.</p>
+<p class="li">Crea roles base si no existen</p>
+<p class="li">Crea settings de empresa por defecto</p>
+<p class="li">No es idempotente (usa upsert)</p>
+<p><strong>email.ts</strong>: Envío de correos.</p>
+<p class="li">Soporta SMTP con STARTTLS</p>
+<p class="li">Fallback a consola en desarrollo</p>
+<p class="li">Implementación manual (sin librería externa)</p>
+<p><strong>exchangeRates.ts</strong>: Fetch de tasas.</p>
+<p class="li">Parsea HTML de eltoque.com</p>
+<p class="li">Actualiza base de datos</p>
+<p class="li">Scheduler cada 24h (setInterval)</p>
+<h2 id="frontend">Frontend</h2>
+<h3 id="stack-tecnol-gico">Stack Tecnológico</h3>
+<p class="li">**Framework**: React 19</p>
+<p class="li">**Build**: Vite 8</p>
+<p class="li">**Estilos**: Tailwind CSS 3.4</p>
+<p class="li">**Estado**: React Query + Context</p>
+<p class="li">**Gráficos**: Recharts</p>
+<p class="li">**Iconos**: Lucide React</p>
+<p class="li">**Router**: React Router DOM 7</p>
+<h3 id="estructura-de-archivos">Estructura de Archivos</h3>
+<pre><code>frontend/src/
+├── App.tsx            # Router principal
+├── main.tsx           # Entry point React
+├── api/
+│   └── client.ts      # Cliente HTTP con fetch
+├── components/
+│   └── Layout.tsx     # Layout con sidebar
+├── pages/             # Componentes de página
+│   ├── Login.tsx      # Login / Registro
+│   ├── Dashboard.tsx  # Dashboard principal
+│   ├── Projects.tsx   # Lista proyectos
+│   ├── ProjectManager.tsx # Manager individual
+│   ├── Infrastructure.tsx # VPS e infraestructura
+│   ├── Finances.tsx   # Transacciones
+│   ├── Tasks.tsx      # Tareas y bugs
+│   ├── Team.tsx       # Miembros del equipo
+│   ├── Chat.tsx       # Chat interno
+│   ├── Notifications.tsx # Actividad
+│   ├── Profile.tsx    # Mi perfil
+│   ├── Settings.tsx   # Config empresa
+│   └── UserProfile.tsx # Perfil público
+├── hooks/
+│   ├── useAuth.tsx    # Context auth
+│   ├── useData.tsx    # Provider React Query
+│   └── useCompany.tsx # Hook company settings
+└── utils/
+    └── userVisuals.tsx # Avatar, color, iniciales</code></pre>
+<h3 id="cliente-api">Cliente API</h3>
+<pre><code>// API_URL configurable por variable de entorno
+const API_URL = import.meta.env.VITE_API_URL || &#x27;http://localhost:3001&#x27;
+
+// Clase con métodos convenientes
+class ApiClient {
+  async request&lt;T&gt;(endpoint, options) { ... }
+  get&lt;T&gt;(endpoint) { ... }
+  post&lt;T&gt;(endpoint, data) { ... }
+  put&lt;T&gt;(endpoint, data) { ... }
+  delete&lt;T&gt;(endpoint) { ... }
+}</code></pre>
+<h3 id="autenticaci-n">Autenticación</h3>
+<p class="li">Token JWT almacenado en localStorage</p>
+<p class="li">Token se incluye en header `Authorization: Bearer &lt;token&gt;`</p>
+<p class="li">useAuth hook gestiona login/logout/profile</p>
+<h3 id="modo-oscuro">Modo Oscuro</h3>
+<p>Implementado con CSS overrides en <code>index.css</code>:</p>
+<pre><code>.dark body { background: #0f172a; }
+.dark .bg-white { background-color: #111827 !important; }
+/* etc */</code></pre>
+<p>Toggle en Layout usa <code>document.documentElement.classList.toggle(&#x27;dark&#x27;, value)</code> + localStorage.</p>
+<h3 id="websocket-chat">WebSocket (Chat)</h3>
+<pre><code>// Conexión
+const socket = new WebSocket(`ws://host/api/chat/ws?token=${token}`)
+
+// Eventos
+socket.onmessage = (event) =&gt; {
+  const payload = JSON.parse(event.data)
+  if (payload.type === &#x27;new_message&#x27;) { ... }
+}</code></pre>
+<p>Fallback a HTTP si WebSocket no disponible.</p>
+<h2 id="despliegue">Despliegue</h2>
+<h3 id="desarrollo">Desarrollo</h3>
+<p class="li">Backend: `npm run dev` (tsx watch)</p>
+<p class="li">Frontend: `npm run dev` (Vite)</p>
+<h3 id="producci-n">Producción</h3>
+<p><strong>Backend:</strong></p>
+<pre><code>npm run build  # compila TypeScript
+npm run start  # node dist/index.js</code></pre>
+<p><strong>Frontend:</strong></p>
+<pre><code>npm run build  # genera dist/
+npm run preview # sirve dist/</code></pre>
+<h3 id="variables-de-entorno-para-producci-n">Variables de Entorno para Producción</h3>
+<p><strong>Backend:</strong></p>
+<p class="li">`DATABASE_URL` - Connection string</p>
+<p class="li">`JWT_SECRET` - Clave firma JWT</p>
+<p class="li">`PORT` / `HOST` - Bind servidor</p>
+<p class="li">`SMTP_*` - Configuración correo</p>
+<p class="li">`NODE_ENV` - production/development</p>
+<p><strong>Frontend:</strong></p>
+<p class="li">`VITE_API_URL` - URL del backend</p>
+<h3 id="vps-con-tailscale">VPS con Tailscale</h3>
+<p>1. Subir archivos</p>
+<p>2. Ejecutar <code>deploy.sh</code> o manualmente</p>
+<p>3. Configurar firewall:</p>
+<p>   ```bash</p>
+<p>   ufw allow from 100.64.0.0/10 to any port 3001</p>
+<p>   ```</p>
+<p>4. Acceder por IP Tailscale</p>
+<h2 id="seguridad">Seguridad</h2>
+<p class="li">Contraseñas hasheadas con bcrypt (10 rounds)</p>
+<p class="li">JWT con expiración</p>
+<p class="li">CORS configurable</p>
+<p class="li">Validación de inputs con Zod</p>
+<p class="li">SQL injection previene Prisma (ORM)</p>
+<p class="li">Rate limiting no implementado (pendiente)</p>
+<h2 id="performance">Performance</h2>
+<p class="li">Base de datos SQLite para desarrollo</p>
+<p class="li">React Query con staleTime de 30s</p>
+<p class="li">Frontend ~750KB JS comprimido</p>
+<p class="li">WebSocket para chat en tiempo real</p>
+<h2 id="pendientes-mejoras">Pendientes / Mejoras</h2>
+<p class="li">Tests automatizados</p>
+<p class="li">Rate limiting</p>
+<p class="li">Notificaciones push</p>
+<p class="li">Importación CSV</p>
+<p class="li">Migración a MySQL/PostgreSQL para producción</p>
+<p class="li">Upload de archivos (actualmente solo URLs)</p>
+<p class="li">Dashboard más interactivo</p>
+<p class="li">Métricas históricas</p></section></article></main><footer>DevFast Manager</footer><script src="../i18n.js"></script><script>document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>{location.href=b.dataset.lang==='es'?'./':'./en.html'});document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang==='es'));</script></body></html>
